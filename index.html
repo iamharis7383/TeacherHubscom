@@ -3,767 +3,308 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TeacherHub MEGA - Govt Primary School Dhok Jhatt</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Emaan Pizza Pichnand - Full Project - 1 File - 1000+ Lines - Full Code</title>
+<meta name="description" content="Emaan Pizza Pichnand - Main Bazaar Pichnand - Best Pizza Burger Shawarma">
 <style>
-*{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-body{background:#f1f5f9;color:#0f172a}
-.glass{background:rgba(255,255,255,.95);backdrop-filter:blur(16px)}
-.hero-bg{background:linear-gradient(rgba(15,23,42,.90),rgba(15,23,42,.82)),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center}
-.hero-bg2{background:linear-gradient(135deg,#2563eb,#1d4ed8 55%,#0f172a)}
-.tab-btn.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px}
-input,select,textarea{outline:none}
-input:focus,select:focus,textarea:focus{border-color:#2563eb!important;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
-.modal{display:none}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#fffaf5;color:#292524;line-height:1.6}
+body.dark-mode{background:#1c1917;color:#f5f5f4}
+body.dark-mode .food-card{background:#292524;color:#fff;border-color:#44403c}
+body.dark-mode .res-card{background:#292524;color:#fff}
+body.dark-mode .hero-card{background:#292524;color:#fff}
+body.dark-mode .builder-box{background:#292524;color:#fff}
+body.dark-mode .track-box{background:#292524;color:#fff}
+body.dark-mode input{background:#292524;color:#fff}
+body.dark-mode select{background:#292524;color:#fff}
+body.dark-mode textarea{background:#292524;color:#fff}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;outline:none}
+input{padding:12px 14px;border:1px solid #e7e5e4;border-radius:10px;width:100%;outline:none;font-size:14px;background:#fff}
+select{padding:12px 14px;border:1px solid #e7e5e4;border-radius:10px;width:100%;outline:none;font-size:14px;background:#fff}
+textarea{padding:12px 14px;border:1px solid #e7e5e4;border-radius:10px;width:100%;outline:none;font-size:14px;background:#fff}
+input:focus{border-color:#dc2626}
+select:focus{border-color:#dc2626}
+textarea:focus{border-color:#dc2626}
+.container{max-width:1240px;margin:0 auto;padding:0 20px}
+.topbar{background:#1c1917;color:#fff;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid #e7e5e4}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-size:26px;font-weight:900;color:#dc2626;line-height:1}
+.logo span{color:#1c1917;font-size:13px;display:block;letter-spacing:2px}
+.nav{display:flex;gap:18px;font-weight:600;font-size:14px}
+.nav a:hover{color:#dc2626}
+.header-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{padding:11px 20px;border-radius:10px;font-weight:700;font-size:14px;display:inline-block;text-align:center}
+.btn-primary{background:#dc2626;color:#fff}
+.btn-primary:hover{background:#b91c1c}
+.btn-dark{background:#1c1917;color:#fff}
+.btn-light{background:#fff;border:1px solid #e7e5e4;color:#292524}
+.btn-green{background:#16a34a;color:#fff}
+.btn-orange{background:#f97316;color:#fff}
+.cart-btn{position:relative;background:#fff;border:1px solid #e7e5e4;padding:10px 14px;border-radius:10px;font-weight:700}
+.cart-count{position:absolute;top:-8px;right:-8px;background:#dc2626;color:#fff;font-size:11px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.hero{background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200');background-size:cover;background-position:center;color:#fff;padding:70px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:54px;line-height:1.05;margin-bottom:14px}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:17px;opacity:.92;margin-bottom:22px}
+.hero-stats{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.stat-box{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:14px 18px;border-radius:12px}
+.stat-box b{font-size:22px;display:block}
+.hero-card{background:#fff;color:#292524;border-radius:18px;padding:22px}
+.hero-card p{font-size:13px;color:#78716c}
+.offer-badge{background:#fef3c7;color:#92400e;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800;display:inline-block;margin-bottom:12px}
+.flex{display:flex;gap:10px;flex-wrap:wrap}
+.mt{margin-top:14px}
+.section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:32px}
+.section-title small{color:#dc2626;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+.section-title h2{font-size:34px;margin:8px 0}
+.section-title p{color:#78716c;max-width:650px;margin:0 auto}
+.category-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.cat-btn{padding:10px 18px;border-radius:30px;border:1px solid #e7e5e4;background:#fff;font-weight:600}
+.cat-btn.active{background:#dc2626;color:#fff;border-color:#dc2626}
+.cat-btn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.search-row{display:flex;gap:10px;max-width:820px;margin:0 auto 18px}
+.size-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:26px;align-items:center}
+.size-btn{padding:8px 16px;border-radius:20px;border:1px solid #e7e5e4;background:#fff;font-size:13px;font-weight:600}
+.size-btn.active{background:#1c1917;color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.food-card{background:#fff;border:1px solid #e7e5e4;border-radius:18px;overflow:hidden;transition:.3s}
+.food-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.1)}
+.food-card img{width:100%;height:210px;object-fit:cover}
+.food-body{padding:18px}
+.food-top{display:flex;justify-content:space-between;align-items:flex-start}
+.food-top h3{font-size:18px}
+.price{font-size:20px;font-weight:800;color:#dc2626}
+.old-price{text-decoration:line-through;color:#78716c;font-size:13px;margin-left:6px}
+.food-body p{color:#78716c;font-size:13px;margin:8px 0}
+.food-meta{display:flex;gap:8px;font-size:12px;margin-bottom:12px;flex-wrap:wrap}
+.tag{background:#f5f5f4;padding:4px 10px;border-radius:20px}
+.tag.hot{background:#fee2e2;color:#991b1b}
+.tag.veg{background:#dcfce7;color:#166534}
+.qty-row{display:flex;align-items:center;gap:10px}
+.qty-btn{width:36px;height:36px;border-radius:8px;background:#f5f5f4;font-size:18px;font-weight:800}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.about-grid img{width:100%;height:380px;object-fit:cover;border-radius:18px}
+.check-list{list-style:none;margin:16px 0}
+.check-list li{padding:8px 0;border-bottom:1px solid #e7e5e4;font-size:14px}
+.check-list li b{color:#dc2626}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature-box{background:#fff;border:1px solid #e7e5e4;padding:20px;border-radius:16px;text-align:center}
+.feature-box h3{font-size:15px;margin:10px 0 6px}
+.feature-box p{font-size:13px;color:#78716c}
+.feature-icon{width:54px;height:54px;background:#fef2f2;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin:0 auto;color:#dc2626}
+.deal-section{background:#1c1917;color:#fff;border-radius:20px;padding:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
+.deal-section h2{font-size:32px;margin-bottom:10px}
+.timer-box{display:flex;gap:10px;margin-top:16px}
+.timer-item{background:#fff;color:#000;padding:12px;border-radius:12px;text-align:center;min-width:70px}
+.timer-item b{font-size:22px;display:block}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.testi{background:#fff;border:1px solid #e7e5e4;padding:20px;border-radius:16px}
+.testi p{font-size:14px;color:#78716c;margin:10px 0}
+.stars{color:#eab308;letter-spacing:1px;font-weight:800}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:14px}
+.reservation-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.res-card{background:#fff;border:1px solid #e7e5e4;border-radius:18px;padding:24px}
+.res-card h3{margin-bottom:12px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.track-box{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:20px}
+.track-steps{display:flex;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:10px}
+.track-step{text-align:center;flex:1;min-width:90px}
+.track-step .dot{width:44px;height:44px;border-radius:50%;background:#e7e5e4;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800}
+.track-step.active .dot{background:#dc2626;color:#fff}
+.track-step.done .dot{background:#16a34a;color:#fff}
+.progress{height:8px;background:#e7e5e4;border-radius:20px;overflow:hidden;margin-top:12px}
+.progress div{height:100%;background:linear-gradient(90deg,#dc2626,#f97316);width:25%;transition:.5s}
+.builder-box{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:20px}
+.topping{padding:8px 14px;border:1px solid #e7e5e4;border-radius:20px;font-size:13px;font-weight:600;background:#fff;cursor:pointer}
+.topping.selected{background:#dc2626;color:#fff;border-color:#dc2626}
+.admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.admin-card{background:#fff;border:1px solid #e7e5e4;border-radius:14px;padding:18px}
+.admin-card b{font-size:26px;display:block}
+.admin-card span{color:#78716c;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{padding:10px;text-align:left;border-bottom:1px solid #e7e5e4}
+td{padding:10px;text-align:left;border-bottom:1px solid #e7e5e4}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:430px;max-width:94%;background:#fff;z-index:200;box-shadow:-10px 0 40px rgba(0,0,0,.2);transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+.cart-drawer.open{transform:none}
+.cart-head{padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e7e5e4}
+.cart-body{flex:1;overflow-y:auto;padding:16px}
+.cart-item{display:flex;gap:12px;padding:12px;border:1px solid #e7e5e4;border-radius:12px;margin-bottom:10px;align-items:center}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.cart-item-info{flex:1}
+.cart-item-info b{font-size:14px}
+.cart-foot{padding:16px;border-top:1px solid #e7e5e4}
+.total-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px}
+.total-row.grand{font-size:18px;font-weight:800;border-top:1px dashed #e7e5e4;margin-top:8px;padding-top:10px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;display:none}
+.overlay.show{display:block}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
 .modal.open{display:flex}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.fadeUp{animation:fadeUp .4s ease both}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.float{animation:float 3s ease-in-out infinite}
-.badge{font-size:10px;padding:2px 8px;border-radius:999px;font-weight:700}
-.card-hover:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.08)}
-.card-hover{transition:all .2s}
-.stat-card{background:#fff;border-radius:20px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#64748b;font-weight:700}
+.modal-box{background:#fff;border-radius:18px;padding:26px;width:100%;max-width:580px;max-height:92vh;overflow-y:auto}
+.toast{position:fixed;bottom:20px;right:20px;background:#1c1917;color:#fff;padding:12px 18px;border-radius:12px;z-index:400;display:none;font-size:14px;font-weight:600;max-width:92%}
+.footer{background:#1c1917;color:#d6d3d1;padding:50px 0 20px;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.footer h3{color:#fff;margin-bottom:14px}
+.footer a{display:block;padding:4px 0;font-size:14px}
+.footer a:hover{color:#fff}
+.newsletter{display:flex;gap:8px;margin-top:12px}
+.copyright{border-top:1px solid #44403c;margin-top:30px;padding-top:16px;text-align:center;font-size:13px}
+.floating{position:fixed;bottom:20px;left:20px;z-index:100;background:#16a34a;color:#fff;padding:12px 18px;border-radius:30px;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.faq-item{border:1px solid #e7e5e4;border-radius:12px;margin-bottom:10px;background:#fff;overflow:hidden}
+.faq-q{padding:14px 18px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between}
+.faq-a{padding:0 18px 14px;color:#78716c;font-size:14px;display:none}
+.faq-item.open .faq-a{display:block}
+.loyalty{background:linear-gradient(90deg,#dc2626,#f97316);color:#fff;border-radius:18px;padding:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.chat-widget{position:fixed;bottom:80px;right:20px;z-index:120;background:#fff;border:1px solid #e7e5e4;border-radius:16px;width:320px;max-width:92%;box-shadow:0 20px 40px rgba(0,0,0,.15);display:none}
+.chat-widget.open{display:block}
+.chat-head{background:#dc2626;color:#fff;padding:12px 16px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between}
+.chat-body{padding:12px;height:220px;overflow-y:auto;font-size:13px}
+.chat-msg{padding:8px 12px;border-radius:12px;margin-bottom:8px;max-width:85%}
+.chat-msg.bot{background:#f5f5f4}
+.chat-msg.me{background:#dc2626;color:#fff;margin-left:auto}
+.extra-box{background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:20px}
+.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.reservation-grid{grid-template-columns:1fr}.deal-section{grid-template-columns:1fr}.hero h1{font-size:36px}.menu-grid{grid-template-columns:1fr 1fr}.features-grid{grid-template-columns:1fr 1fr}.testi-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.admin-grid{grid-template-columns:1fr 1fr}.nav{display:none}.footer-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.extra-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.menu-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.admin-grid{grid-template-columns:1fr}.extra-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<!-- ================= LANDING ================= -->
-<div id="landing">
-<header class="hero-bg text-white">
-<div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-xl float">
-<i class="fa-solid fa-graduation-cap"></i>
-</div>
-<div>
-<p class="font-bold">Government Primary School</p>
-<p class="text-sm text-blue-200">Dhok Jhatt • Punjab, Pakistan</p>
-</div>
-</div>
-<button type="button" onclick="openAuth('login')" class="bg-blue-600 px-5 py-2.5 rounded-full font-semibold text-sm">Sign In →</button>
-</div>
-<div class="max-w-5xl mx-auto px-4 pt-12 pb-8 text-center fadeUp">
-<span class="bg-white/10 border border-white/20 text-[11px] px-3 py-1.5 rounded-full tracking-widest">MEGA ERP • LMS • ZERO TO ADVANCE • 100%</span>
-<h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-5">TeacherHub Mega Portal<br><span class="text-blue-300">Government Primary School Dhok Jhatt</span></h1>
-<p class="text-slate-300 mt-4 max-w-2xl mx-auto text-sm md:text-base">Students, Parents, Teachers, Head Teacher & Admin — all in one portal. Attendance, Fees, Results, Quiz, Salary, Transport, Library, Certificates and more.</p>
-<div class="flex flex-wrap justify-center gap-3 mt-7">
-<button type="button" onclick="openAuth('login')" class="bg-blue-600 px-7 py-3 rounded-full font-bold">Login to Portal</button>
-<button type="button" onclick="openAuth('signup')" class="bg-white text-slate-900 px-7 py-3 rounded-full font-bold">Create Account</button>
-</div>
-<div class="flex justify-center gap-6 md:gap-10 mt-8 text-center">
-<div><p class="text-2xl font-bold" id="landStudents">0</p><p class="text-xs text-slate-300">Students</p></div>
-<div><p class="text-2xl font-bold" id="landTeachers">1</p><p class="text-xs text-slate-300">Faculty</p></div>
-<div><p class="text-2xl font-bold" id="landQuiz">0</p><p class="text-xs text-slate-300">Quizzes</p></div>
-<div><p class="text-2xl font-bold">100%</p><p class="text-xs text-slate-300">Advance</p></div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-4 pb-6">
-<div class="grid md:grid-cols-3 gap-3">
-<div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-<p class="font-bold text-sm">1. Attendance & Punctuality</p>
-<p class="text-xs text-slate-300 mt-1">Daily marking of student and self-logs.</p>
-</div>
-<div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-<p class="font-bold text-sm">2. Academic Reporting</p>
-<p class="text-xs text-slate-300 mt-1">Timely reports to Head Teachers & Admin.</p>
-</div>
-<div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-<p class="font-bold text-sm">3. System Security</p>
-<p class="text-xs text-slate-300 mt-1">Role-based permissions under Admin Haris Awan. New users join as New User.</p>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-4 pb-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">🧑‍🎓</p><p class="font-bold text-sm mt-1">Parent Portal</p><p class="text-xs text-slate-500">Child Record</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">📝</p><p class="font-bold text-sm mt-1">Online Quiz</p><p class="text-xs text-slate-500">Auto Marks + Grade</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">💰</p><p class="font-bold text-sm mt-1">Salary + Fees</p><p class="text-xs text-slate-500">Paid / Pending</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">🚌</p><p class="font-bold text-sm mt-1">Transport</p><p class="text-xs text-slate-500">Van / Route</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">📜</p><p class="font-bold text-sm mt-1">Certificates</p><p class="text-xs text-slate-500">Print Certificate</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">🪪</p><p class="font-bold text-sm mt-1">ID Card</p><p class="text-xs text-slate-500">Student ID Print</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">📦</p><p class="font-bold text-sm mt-1">Inventory</p><p class="text-xs text-slate-500">Stock Manage</p></div>
-<div class="bg-white text-slate-900 rounded-2xl p-4"><p class="text-2xl">📅</p><p class="font-bold text-sm mt-1">Events</p><p class="text-xs text-slate-500">PTM / Holidays</p></div>
-</div>
-<p class="text-center text-xs text-slate-400 mt-6">© 2026 Govt Primary School Dhok Jhatt • Made By Haris Awan • Mega Project</p>
-</div>
-</header>
-</div>
-<!-- ================= AUTH ================= -->
-<div id="authModal" class="modal fixed inset-0 z-50 items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-<div class="glass w-full max-w-md rounded-3xl p-6 shadow-2xl fadeUp max-h-[92vh] overflow-y-auto">
-<div class="flex justify-between">
-<div>
-<div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
-<h2 class="font-extrabold text-xl mt-3">Govt Primary School<br>Dhok Jhatt</h2>
-<p class="text-xs text-slate-500">TeacherHub Login • Secure Portal</p>
-</div>
-<button type="button" onclick="closeAuth()" class="text-slate-400 text-xl">✕</button>
-</div>
-<div class="flex bg-slate-100 rounded-full p-1 mt-4">
-<button type="button" id="tabLogin" onclick="setAuthMode('login')" class="flex-1 py-2 rounded-full bg-blue-600 text-white font-bold text-sm">Login</button>
-<button type="button" id="tabSignup" onclick="setAuthMode('signup')" class="flex-1 py-2 rounded-full font-bold text-sm text-slate-500">Sign Up</button>
-</div>
-<div id="signupNameWrap" class="hidden mt-4">
-<label class="text-xs font-bold">Full Name *</label>
-<input id="authName" class="w-full border rounded-xl px-3 py-2.5 mt-1" placeholder="Enter full name">
-</div>
-<div class="mt-3">
-<label class="text-xs font-bold">Email *</label>
-<input id="authEmail" class="w-full border rounded-xl px-3 py-2.5 mt-1" placeholder="name@example.com">
-</div>
-<div id="signupSubjectWrap" class="hidden mt-3">
-<label class="text-xs font-bold">Subject / Designation / Child Name</label>
-<input id="authSubject" class="w-full border rounded-xl px-3 py-2.5 mt-1" placeholder="e.g. English / Your Child Name">
-</div>
-<div id="signupPhoneWrap" class="hidden mt-3">
-<label class="text-xs font-bold">Phone</label>
-<input id="authPhone" class="w-full border rounded-xl px-3 py-2.5 mt-1" placeholder="+92 300 1234567">
-</div>
-<div class="mt-3">
-<label class="text-xs font-bold">Password *</label>
-<input id="authPass" type="password" class="w-full border rounded-xl px-3 py-2.5 mt-1" placeholder="••••••••">
-</div>
-<p id="signupNote" class="hidden text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-xl p-3 mt-3">You will join as a <b>New User</b>. Admin Haris Awan will assign you Teacher / Parent / Student or any other role. Until then you will not get full access.</p>
-<button type="button" onclick="doAuth()" id="authSubmit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold mt-5">Login</button>
-<p class="text-center text-sm mt-3"><button type="button" onclick="switchAuth()" id="authSwitchText" class="text-blue-600 font-semibold">If you Don't Have Account Sign Up</button></p>
-<p class="text-center text-[11px] text-slate-400 mt-3">Secure Login • Only Admin can assign roles</p>
-<p id="authError" class="text-center text-xs text-red-600 mt-2 hidden"></p>
-</div>
-</div>
-<!-- ================= DASHBOARD ================= -->
-<div id="dashboard" class="hidden">
-<header class="bg-white shadow-sm sticky top-0 z-40">
-<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
-<div class="flex items-center gap-2">
-<div class="w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center"><i class="fa-solid fa-graduation-cap"></i></div>
-<div><p class="font-bold text-sm">GPS Dhok Jhatt</p><p class="text-[11px] text-slate-500">Mega ERP • 100% Advance</p></div>
-</div>
-<div class="flex items-center gap-2">
-<div class="relative hidden md:block">
-<i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-<input id="globalSearch" oninput="onGlobalSearch(this.value)" class="border rounded-full pl-8 pr-3 py-2 text-xs w-56" placeholder="Search...">
-</div>
-<button type="button" onclick="goTab('notices')" class="relative w-9 h-9 border rounded-full">🔔<span id="noticeDot" class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full hidden"></span></button>
-<span id="userBadge" class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full hidden sm:block"></span>
-<button type="button" onclick="openProfile()" class="border px-3 py-1.5 rounded-full text-xs font-bold">My Profile</button>
-<button type="button" onclick="logout()" class="bg-slate-900 text-white px-3 py-1.5 rounded-full text-xs font-bold">Logout</button>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-4 pb-3 flex gap-2 overflow-x-auto whitespace-nowrap" id="tabsBar"></div>
-</header>
-<main class="max-w-7xl mx-auto px-4 py-5">
-<div id="newUserBox" class="hidden bg-amber-50 border border-amber-200 rounded-3xl p-6 text-center mb-4">
-<p class="text-3xl">⏳</p>
-<h2 class="font-bold text-lg mt-2">Waiting for Admin Approval</h2>
-<p class="text-sm text-slate-600 mt-1">You are a <b>New User</b>. Admin Haris Awan will soon assign you a role — Teacher / Parent / Student / Head Teacher. Until then you can only see this page.<br>Please send your name to Admin on WhatsApp.</p>
-<p class="text-xs text-slate-400 mt-2" id="newUserInfo"></p>
-</div>
-<!-- 1 OVERVIEW -->
-<div id="tab-overview" class="tabPage">
-<div class="hero-bg2 text-white rounded-3xl p-5 md:p-6 flex justify-between items-center">
-<div>
-<h2 class="text-xl md:text-2xl font-bold" id="welcomeText">Welcome back</h2>
-<p class="text-blue-100 text-sm" id="welcomeSub"></p>
-<p class="text-xs text-blue-200 mt-1" id="welcomeDate"></p>
-<div class="flex gap-2 mt-3 flex-wrap">
-<button type="button" onclick="goTab('attendance')" class="bg-white text-blue-700 px-3 py-1.5 rounded-full text-xs font-bold">Mark Attendance</button>
-<button type="button" onclick="goTab('quiz')" class="bg-white/20 px-3 py-1.5 rounded-full text-xs font-bold">Take Quiz</button>
-<button type="button" onclick="goTab('parent')" class="bg-white/20 px-3 py-1.5 rounded-full text-xs font-bold">Parent View</button>
-</div>
-</div>
-<div class="text-center shrink-0">
-<div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center font-bold text-xl mx-auto" id="avatarCircle">HA</div>
-<p class="text-[11px] mt-1 bg-white/20 px-2 py-0.5 rounded-full" id="rolePill">Admin</p>
-</div>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-<div class="stat-card card-hover"><p class="text-xs text-slate-500">Students</p><p class="text-2xl font-extrabold" id="statStudents">0</p><p class="text-[11px] text-emerald-600 font-bold">Live DB</p></div>
-<div class="stat-card card-hover"><p class="text-xs text-slate-500">Faculty + New Users</p><p class="text-2xl font-extrabold" id="statFaculty">0</p><p class="text-[11px] text-blue-600 font-bold" id="statNewUsers">0 New Users</p></div>
-<div class="stat-card card-hover"><p class="text-xs text-slate-500">Quizzes</p><p class="text-2xl font-extrabold" id="statQuiz">0</p><p class="text-[11px] text-amber-600 font-bold" id="statQuizSub">0 Attempts</p></div>
-<div class="stat-card card-hover"><p class="text-xs text-slate-500">Fees Collected</p><p class="text-2xl font-extrabold" id="statFees">Rs 0</p><p class="text-[11px] text-slate-500" id="statFeesSub">0 Paid</p></div>
-</div>
-<div class="grid md:grid-cols-3 gap-4 mt-4">
-<div class="md:col-span-2 bg-white rounded-3xl p-4 shadow-sm">
-<div class="flex justify-between"><h3 class="font-bold">Attendance Overview</h3><span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full font-bold" id="attRateTop">0%</span></div>
-<canvas id="attChart" width="600" height="180" class="w-full mt-3 border rounded-xl bg-slate-50"></canvas>
-</div>
-<div class="bg-white rounded-3xl p-4 shadow-sm">
-<h3 class="font-bold">Quick Actions</h3>
-<div class="space-y-2 mt-3">
-<button type="button" onclick="goTab('attendance')" class="w-full text-left bg-blue-50 rounded-xl p-3"><p class="font-bold text-sm">📅 Mark Attendance</p></button>
-<button type="button" onclick="goTab('quiz')" class="w-full text-left bg-purple-50 rounded-xl p-3"><p class="font-bold text-sm">📝 Create / Take Quiz</p></button>
-<button type="button" onclick="goTab('fees')" class="w-full text-left bg-emerald-50 rounded-xl p-3"><p class="font-bold text-sm">💰 Fees</p></button>
-<button type="button" onclick="goTab('certificates')" class="w-full text-left bg-amber-50 rounded-xl p-3"><p class="font-bold text-sm">📜 Certificates & ID Card</p></button>
-</div>
-</div>
-</div>
-<div class="grid md:grid-cols-2 gap-4 mt-4">
-<div class="bg-white rounded-3xl p-4 shadow-sm"><h3 class="font-bold">Recent Notices</h3><div id="recentNotices" class="space-y-2 mt-3"></div><p id="emptyRecentNotices" class="text-sm text-slate-400">No notices yet.</p></div>
-<div class="bg-white rounded-3xl p-4 shadow-sm"><h3 class="font-bold">Upcoming Events</h3><div id="recentEvents" class="space-y-2 mt-3"></div><p id="emptyRecentEvents" class="text-sm text-slate-400">No events yet.</p></div>
-</div>
-<div class="hero-bg rounded-3xl mt-6 p-6 md:p-10 text-white text-center"><span class="bg-blue-600 text-[11px] px-3 py-1 rounded-full font-bold">TEACHERHUB MEGA</span><h3 class="text-2xl md:text-3xl font-extrabold mt-4">Government Primary School Dhok Jhatt</h3><p class="text-slate-300 mt-2">Excellence in Primary Education & Faculty Collaboration</p><p class="text-xs mt-6 text-slate-400">Made By Haris Awan • Mega Project • 2026 • 100% Advance</p></div>
-</div>
-<!-- 2 PARENT -->
-<div id="tab-parent" class="tabPage hidden">
-<h2 class="font-bold text-lg">👨‍👩‍👧 Parent Portal</h2>
-<p class="text-sm text-slate-500">Select your child Roll No — Attendance, Fees, Result will show.</p>
-<div class="flex gap-2 mt-3 flex-wrap">
-<select id="parentStudent" onchange="renderAll()" class="border rounded-full px-3 py-2 text-sm"><option value="">Select Student</option></select>
-<button type="button" onclick="goTab('complaints')" class="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">File Complaint</button>
-</div>
-<div id="parentView" class="grid md:grid-cols-3 gap-3 mt-4"></div>
-<p id="emptyParent" class="text-sm text-slate-400 mt-4">Select student to view parent dashboard.</p>
-</div>
-<!-- 3 STUDENT PORTAL -->
-<div id="tab-studentportal" class="tabPage hidden">
-<h2 class="font-bold text-lg">🎓 My Student Portal</h2>
-<p class="text-sm text-slate-500">Homework, Quiz, Timetable, Result — everything for student.</p>
-<div class="grid md:grid-cols-3 gap-3 mt-4">
-<div class="bg-white rounded-2xl p-4"><p class="font-bold">My Homework</p><div id="myHW"></div></div>
-<div class="bg-white rounded-2xl p-4"><p class="font-bold">My Results</p><div id="myResults"></div></div>
-<div class="bg-white rounded-2xl p-4"><p class="font-bold">My Timetable</p><div id="myTT"></div></div>
-</div>
-<button type="button" onclick="goTab('quiz')" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold mt-4">Go To Quiz →</button>
-</div>
-<!-- 4 STUDENTS -->
-<div id="tab-students" class="tabPage hidden">
-<div class="flex flex-wrap gap-2 justify-between">
-<h2 class="font-bold text-lg">Students</h2>
-<div class="flex gap-2 flex-wrap">
-<input id="studentSearch" oninput="renderAll()" class="border rounded-full px-4 py-2 text-sm" placeholder="Search...">
-<select id="studentClassFilter" onchange="renderAll()" class="border rounded-full px-3 py-2 text-sm"><option value="">All Classes</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-<button type="button" onclick="exportStudentsCSV()" class="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold">Export CSV</button>
-<button type="button" onclick="openStudentModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Student</button>
-</div>
-</div>
-<div class="bg-white rounded-2xl shadow-sm mt-4 overflow-hidden">
-<div class="overflow-x-auto"><table class="w-full text-sm min-w-[700px]"><thead class="bg-slate-50"><tr><th class="text-left p-3 th">Student</th><th class="text-left p-3 th">Roll / Class</th><th class="text-left p-3 th">Father / Phone</th><th class="text-left p-3 th">Fees</th><th class="text-left p-3 th">Actions</th></tr></thead><tbody id="studentsTable"></tbody></table></div>
-<p id="emptyStudents2" class="p-5 text-center text-slate-400 text-sm">No students yet.</p>
-</div>
-</div>
-<!-- 5 ATTENDANCE -->
-<div id="tab-attendance" class="tabPage hidden">
-<div class="flex flex-wrap gap-2 justify-between">
-<h2 class="font-bold text-lg">Attendance</h2>
-<div class="flex gap-2">
-<input type="date" id="attDate" class="border rounded-full px-3 py-2 text-sm" onchange="renderAll()">
-<button type="button" onclick="markAllPresent()" class="bg-emerald-600 text-white px-3 py-2 rounded-full text-xs font-bold">Mark All Present</button>
-<button type="button" onclick="exportAttendanceCSV()" class="border px-3 py-2 rounded-full text-xs font-bold">Export CSV</button>
-</div>
-</div>
-<div class="grid grid-cols-4 gap-3 mt-4">
-<div class="bg-white rounded-2xl p-3 text-center"><p class="text-xs text-slate-500">Present</p><p class="text-xl font-bold text-emerald-600" id="attPresent">0</p></div>
-<div class="bg-white rounded-2xl p-3 text-center"><p class="text-xs text-slate-500">Absent</p><p class="text-xl font-bold text-red-600" id="attAbsent">0</p></div>
-<div class="bg-white rounded-2xl p-3 text-center"><p class="text-xs text-slate-500">Late</p><p class="text-xl font-bold text-amber-600" id="attLate">0</p></div>
-<div class="bg-white rounded-2xl p-3 text-center"><p class="text-xs text-slate-500">Rate</p><p class="text-xl font-bold text-blue-600" id="attRate">0%</p></div>
-</div>
-<div class="bg-white rounded-2xl shadow-sm mt-4 overflow-hidden">
-<table class="w-full text-sm"><thead class="bg-slate-50"><tr><th class="text-left p-3 th">Roll</th><th class="text-left p-3 th">Name</th><th class="text-left p-3 th">Class</th><th class="text-left p-3 th">Status</th><th class="text-left p-3 th">Action</th></tr></thead><tbody id="studentTable"></tbody></table>
-<p id="emptyStudents" class="p-5 text-center text-slate-400 text-sm">No students yet.</p>
-</div>
-</div>
-<!-- 6 REPORTS -->
-<div id="tab-reports" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Reports</h2><button type="button" onclick="openReportModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ New Report</button></div>
-<div id="reportsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyReports" class="text-center text-slate-400 text-sm mt-6">No reports yet.</p>
-</div>
-<!-- 7 HOMEWORK -->
-<div id="tab-homework" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Worksheets & Homework</h2><button type="button" onclick="openHWModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Publish</button></div>
-<div id="hwList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyHW" class="text-center text-slate-400 text-sm mt-6">No worksheets yet.</p>
-<h3 class="font-bold mt-6">Submissions</h3>
-<div id="hwSubList" class="grid md:grid-cols-2 gap-3 mt-3"></div>
-</div>
-<!-- 8 QUIZ -->
-<div id="tab-quiz" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📝 Online Quiz / Test</h2><button type="button" onclick="openQuizModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Create Quiz</button></div>
-<p class="text-xs text-slate-500 mt-1">Teacher creates quiz • Student attempts • Auto Marks + Grade</p>
-<div id="quizList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyQuiz" class="text-center text-slate-400 text-sm mt-6">No quizzes yet.</p>
-<h3 class="font-bold mt-6">My Attempts</h3>
-<div id="quizAttempts" class="grid md:grid-cols-2 gap-3 mt-3"></div>
-</div>
-<!-- 9 FEES -->
-<div id="tab-fees" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Fees</h2><button type="button" onclick="openFeeModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Fee</button></div>
-<div class="grid grid-cols-3 gap-3 mt-4">
-<div class="bg-white rounded-2xl p-4 text-center"><p class="text-xs text-slate-500">Total Due</p><p class="font-bold" id="feeDue">Rs 0</p></div>
-<div class="bg-white rounded-2xl p-4 text-center"><p class="text-xs text-slate-500">Collected</p><p class="font-bold text-emerald-600" id="feePaid">Rs 0</p></div>
-<div class="bg-white rounded-2xl p-4 text-center"><p class="text-xs text-slate-500">Pending</p><p class="font-bold text-red-600" id="feePending">Rs 0</p></div>
-</div>
-<div id="feesList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyFees" class="text-center text-slate-400 text-sm mt-6">No fee records.</p>
-</div>
-<!-- 10 RESULTS -->
-<div id="tab-results" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Results & Grades</h2><button type="button" onclick="openResultModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Result</button></div>
-<div id="resultsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyResults" class="text-center text-slate-400 text-sm mt-6">No results yet.</p>
-</div>
-<!-- 11 SALARY -->
-<div id="tab-salary" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">💰 Teacher Salary</h2><button type="button" onclick="openSalaryModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Salary</button></div>
-<div id="salaryList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptySalary" class="text-center text-slate-400 text-sm mt-6">No salary records.</p>
-</div>
-<!-- 12 TIMETABLE -->
-<div id="tab-timetable" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Timetable</h2><button type="button" onclick="openTimetableModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Slot</button></div>
-<div id="ttList" class="grid md:grid-cols-3 gap-3 mt-4"></div>
-<p id="emptyTT" class="text-center text-slate-400 text-sm mt-6">No slots yet.</p>
-</div>
-<!-- 13 LEAVE -->
-<div id="tab-leave" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Leave</h2><button type="button" onclick="openLeaveModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Request Leave</button></div>
-<div id="leaveList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyLeave" class="text-center text-slate-400 text-sm mt-6">No leave yet.</p>
-</div>
-<!-- 14 MEETINGS -->
-<div id="tab-meetings" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Meetings</h2><button type="button" id="addMeetingBtn" onclick="openMeetingModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Schedule</button></div>
-<div id="meetingsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyMeetings" class="text-center text-slate-400 text-sm mt-6">No meetings.</p>
-</div>
-<!-- 15 NOTICES -->
-<div id="tab-notices" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Notices</h2><button type="button" onclick="openNoticeModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ New Notice</button></div>
-<div id="noticesList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyNotices" class="text-center text-slate-400 text-sm mt-6">No notices.</p>
-</div>
-<!-- 16 EVENTS -->
-<div id="tab-events" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📅 Events & Calendar</h2><button type="button" onclick="openEventModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Event</button></div>
-<div id="eventsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyEvents" class="text-center text-slate-400 text-sm mt-6">No events.</p>
-</div>
-<!-- 17 LIBRARY -->
-<div id="tab-library" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Library</h2><button type="button" onclick="openBookModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Book</button></div>
-<div id="booksList" class="grid md:grid-cols-3 gap-3 mt-4"></div>
-<p id="emptyBooks" class="text-center text-slate-400 text-sm mt-6">No books.</p>
-</div>
-<!-- 18 INVENTORY -->
-<div id="tab-inventory" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📦 Inventory / Stock</h2><button type="button" onclick="openInventoryModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Item</button></div>
-<div id="inventoryList" class="grid md:grid-cols-3 gap-3 mt-4"></div>
-<p id="emptyInventory" class="text-center text-slate-400 text-sm mt-6">No inventory.</p>
-</div>
-<!-- 19 TRANSPORT -->
-<div id="tab-transport" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">🚌 Transport</h2><button type="button" onclick="openTransportModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Route</button></div>
-<div id="transportList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyTransport" class="text-center text-slate-400 text-sm mt-6">No routes.</p>
-</div>
-<!-- 20 CERTIFICATES -->
-<div id="tab-certificates" class="tabPage hidden">
-<h2 class="font-bold text-lg">📜 Certificates & ID Card</h2>
-<div class="grid md:grid-cols-2 gap-3 mt-4">
-<div class="bg-white rounded-2xl p-4">
-<p class="font-bold">Generate Certificate</p>
-<select id="certStudent" class="w-full border rounded-xl px-3 py-2.5 mt-2"><option value="">Select Student</option></select>
-<select id="certType" class="w-full border rounded-xl px-3 py-2.5 mt-2"><option>Character Certificate</option><option>Bonafide Certificate</option><option>School Leaving Certificate</option></select>
-<button type="button" onclick="printCertificate()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold mt-3">Print Certificate</button>
-</div>
-<div class="bg-white rounded-2xl p-4">
-<p class="font-bold">Student ID Card</p>
-<select id="idStudent" class="w-full border rounded-xl px-3 py-2.5 mt-2"><option value="">Select Student</option></select>
-<button type="button" onclick="printIDCard()" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold mt-3">Print ID Card</button>
-</div>
-</div>
-</div>
-<!-- 21 COMPLAINTS -->
-<div id="tab-complaints" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📩 Complaints / Suggestions</h2><button type="button" onclick="openComplaintModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ New Complaint</button></div>
-<div id="complaintsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyComplaints" class="text-center text-slate-400 text-sm mt-6">No complaints.</p>
-</div>
-<!-- 22 CHAT -->
-<div id="tab-chat" class="tabPage hidden">
-<h2 class="font-bold text-lg">Staff Chat</h2>
-<div class="bg-white rounded-2xl shadow-sm mt-3 p-4">
-<div id="chatBox" class="space-y-3 max-h-[380px] overflow-y-auto"></div>
-<p id="emptyChat" class="text-center text-slate-400 text-sm py-4">No messages.</p>
-<div class="flex gap-2 mt-4"><input id="chatInput" class="flex-1 border rounded-full px-4 py-2.5" placeholder="Type message..."><button type="button" onclick="sendChat()" class="bg-blue-600 text-white px-5 rounded-full font-bold">Send</button></div>
-</div>
-</div>
-<!-- 23 ADMISSIONS NEW -->
-<div id="tab-admissions" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📝 Online Admissions - NEW</h2><button type="button" onclick="openAdmissionModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ New Admission</button></div>
-<div id="admissionsList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyAdmissions" class="text-center text-slate-400 text-sm mt-6">No admission requests.</p>
-</div>
-<!-- 24 DISCIPLINE NEW -->
-<div id="tab-discipline" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">⚖️ Discipline Records - NEW</h2><button type="button" onclick="openDisciplineModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Record</button></div>
-<div id="disciplineList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyDiscipline" class="text-center text-slate-400 text-sm mt-6">No discipline records.</p>
-</div>
-<!-- 25 HEALTH NEW -->
-<div id="tab-health" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">🏥 Health Records - NEW</h2><button type="button" onclick="openHealthModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Health Record</button></div>
-<div id="healthList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyHealth" class="text-center text-slate-400 text-sm mt-6">No health records.</p>
-</div>
-<!-- 26 ALUMNI NEW -->
-<div id="tab-alumni" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">🎓 Alumni - NEW</h2><button type="button" onclick="openAlumniModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Alumni</button></div>
-<div id="alumniList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyAlumni" class="text-center text-slate-400 text-sm mt-6">No alumni yet.</p>
-</div>
-<!-- 27 EXAM SCHEDULE NEW -->
-<div id="tab-examschedule" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">📅 Exam Schedule - NEW</h2><button type="button" onclick="openExamScheduleModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Exam Schedule</button></div>
-<div id="examScheduleList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-<p id="emptyExamSchedule" class="text-center text-slate-400 text-sm mt-6">No exam schedule yet.</p>
-</div>
-<!-- 28 STAFF -->
-<div id="tab-staff" class="tabPage hidden">
-<div class="flex justify-between"><h2 class="font-bold text-lg">Staff & Ranks (Admin Only) • Assign Role From Here</h2><button type="button" onclick="openAddStaffModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">+ Add Staff Manually</button></div>
-<div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 mt-3 text-sm"><b>⚠️ Admin Rule:</b> New user joins as <b>New User</b>. Change dropdown here — Teacher / Head Teacher / Admin / Parent / Student — as you wish. Until you assign a role, user will not get full access.</div>
-<div class="flex gap-2 mt-3 flex-wrap">
-<input id="staffSearch" oninput="renderAll()" class="border rounded-full px-3 py-2 text-sm" placeholder="Search staff...">
-<select id="staffRoleFilter" onchange="renderAll()" class="border rounded-full px-3 py-2 text-sm"><option value="">All Roles</option><option>New User</option><option>Teacher</option><option>Head Teacher</option><option>Admin</option><option>Parent</option><option>Student</option></select>
-</div>
-<div id="staffList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
-</div>
-<!-- 29 SETTINGS -->
-<div id="tab-settings" class="tabPage hidden">
-<h2 class="font-bold text-lg">Settings & Data</h2>
-<div class="bg-white rounded-3xl p-5 mt-4 shadow-sm">
-<p class="font-bold">Backup & Restore + Firebase Sync</p>
-<p class="text-xs text-slate-500 mt-1">Paste your Firebase config in the script section to enable cloud sync. Currently data saves in browser LocalStorage.</p>
-<div class="flex flex-wrap gap-2 mt-3">
-<button type="button" onclick="exportDB()" class="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold">Export JSON</button>
-<label class="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold cursor-pointer">Import JSON<input type="file" accept=".json" onchange="importDB(event)" class="hidden"></label>
-<button type="button" onclick="syncToFirebase()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">Sync To Firebase</button>
-<button type="button" onclick="hardReset()" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold">Hard Reset</button>
-</div>
-<p class="text-xs text-slate-400 mt-4">DB: GPS_DHOK_JHATT_DB_V6 • Admin: harisawan.pk.@school.tm • Version 9 • Full English • No Role Select • Admin Assigns Role</p>
-</div>
-</div>
-</main>
-</div>
-<!-- GENERIC MODAL -->
-<div id="genericModal" class="modal fixed inset-0 z-50 items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-<div class="glass w-full max-w-lg rounded-3xl p-6 shadow-2xl max-h-[92vh] overflow-y-auto">
-<div class="flex justify-between"><h3 id="genericTitle" class="font-bold text-lg">Modal</h3><button type="button" onclick="closeGeneric()" class="text-slate-400 text-xl">✕</button></div>
-<div id="genericBody" class="mt-4"></div>
-</div>
-</div>
-<!-- PROFILE -->
-<div id="profileModal" class="modal fixed inset-0 z-50 items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-<div class="glass w-full max-w-md rounded-3xl p-6 max-h-[92vh] overflow-y-auto">
-<div class="flex justify-between"><h3 class="font-bold text-lg">My Profile</h3><button type="button" onclick="closeProfile()" class="text-slate-400 text-xl">✕</button></div>
-<div class="space-y-3 mt-4">
-<div><label class="text-xs font-bold">Full Name</label><input id="pName" class="w-full border rounded-xl px-3 py-2.5 mt-1"></div>
-<div><label class="text-xs font-bold">Subject</label><input id="pSubject" class="w-full border rounded-xl px-3 py-2.5 mt-1"></div>
-<div><label class="text-xs font-bold">Phone</label><input id="pPhone" class="w-full border rounded-xl px-3 py-2.5 mt-1"></div>
-<div><label class="text-xs font-bold">Password</label><input id="pPass" class="w-full border rounded-xl px-3 py-2.5 mt-1"></div>
-<div><label class="text-xs font-bold">Email</label><input id="pEmail" disabled class="w-full border rounded-xl px-3 py-2.5 mt-1 bg-slate-50"></div>
-<div><label class="text-xs font-bold">My Role (Only Admin Can Change)</label><input id="pRole" disabled class="w-full border rounded-xl px-3 py-2.5 mt-1 bg-slate-50 font-bold"></div>
-</div>
-<button type="button" onclick="saveProfile()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold mt-4">Save Profile</button>
-<div class="border-t mt-5 pt-4 flex gap-2">
-<button type="button" onclick="exportDB()" class="flex-1 bg-emerald-600 text-white py-2.5 rounded-xl text-sm font-bold">Export JSON</button>
-<label class="flex-1 bg-amber-500 text-white py-2.5 rounded-xl text-sm font-bold text-center cursor-pointer">Import<input type="file" accept=".json" onchange="importDB(event)" class="hidden"></label>
-</div>
-</div>
-</div>
+<div class="toast" id="toast">Added to cart</div>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="topbar"><div class="container"><span>Open Daily: 12:00 PM - 12:00 AM | Main Bazaar, Pichnand</span><span>Free Delivery in Pichnand Above Rs 1200 | Call: 0300-1234567 | Emaan Pizza Pichnand</span></div></div>
+<header class="header"><div class="container"><a href="#" class="logo">EMAAN <span>PIZZA - PICHNAND</span></a><nav class="nav"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#builder">Build Pizza</a><a href="#deals">Deals</a><a href="#track">Track</a><a href="#admin">Admin</a><a href="#contact">Contact</a></nav><div class="header-actions"><button class="btn btn-light" onclick="toggleDark()">Dark Mode</button><button class="btn btn-light" onclick="toggleLanguage()">Urdu / English</button><button class="cart-btn" onclick="openCart()">Cart <span class="cart-count" id="cartCount">0</span></button><a href="#reservation" class="btn btn-primary">Book Table</a></div></div></header>
+<section class="hero" id="home"><div class="container"><div class="hero-grid"><div><span class="offer-badge">PICHNAND SPECIAL - FLAT 25% OFF - CODE: EMAAN25</span><h1 id="heroTitle">Best Pizza in Pichnand - Hot, Cheesy, Fresh</h1><p id="heroText">Emaan Pizza - Pichnand's own pizza point. Fresh dough, imported cheese, halal chicken and 25 minutes fast delivery in Pichnand, Dhurnal, Talagang Road and nearby villages.</p><div class="flex"><a href="#menu" class="btn btn-primary">View Pizza Menu</a><a href="#builder" class="btn btn-light">Build Your Own Pizza</a><a href="#deals" class="btn btn-orange">Today Deals</a></div><div class="hero-stats"><div class="stat-box"><b>4.9 / 5</b><span>900+ Reviews in Pichnand</span></div><div class="stat-box"><b>25 Min</b><span>Fast Delivery in Pichnand</span></div><div class="stat-box"><b>30+ Items</b><span>Pizza, Burger, Shawarma</span></div><div class="stat-box"><b>100% Halal</b><span>Fresh Daily</span></div></div></div><div class="hero-card"><h3>Quick Order - Pichnand</h3><p>Enter your name and number, we will call to confirm</p><label class="mt" style="display:block;font-weight:600;font-size:13px">Your Name</label><input id="quickName" placeholder="Enter your name" class="mt"><label style="display:block;font-weight:600;font-size:13px;margin-top:10px">Phone Number</label><input id="quickPhone" placeholder="03xx-xxxxxxx"><label style="display:block;font-weight:600;font-size:13px;margin-top:10px">Your Area in Pichnand</label><select id="quickArea"><option>Main Bazaar Pichnand</option><option>Dhurnal Road</option><option>Talagang Road</option><option>Near Jamia Masjid</option><option>Near Govt School Pichnand</option><option>Other Village - Pichnand</option></select><label style="display:block;font-weight:600;font-size:13px;margin-top:10px">Select Item</label><select id="quickDish"><option>Chicken Tikka Pizza - Rs 999</option><option>Chicken Fajita Pizza - Rs 1099</option><option>Emaan Special Pizza - Rs 1299</option><option>Zinger Burger - Rs 450</option><option>Chicken Shawarma - Rs 350</option><option>Family Deal - Rs 1999</option></select><button class="btn btn-primary mt" style="width:100%" onclick="quickOrder()">Place Quick Order - Pichnand</button><p style="text-align:center;margin-top:10px;font-size:12px">Cash on Delivery | JazzCash / EasyPaisa Available | Free Delivery Above Rs 1200</p></div></div></div></section>
+<section class="section" style="padding-bottom:0"><div class="container"><div class="loyalty"><div><h3>Loyalty Program - Emaan Pizza Pichnand</h3><p>Order 5 times, get 6th Pizza FREE. Your points: <b id="loyaltyPoints">120 Points</b></p></div><div class="flex"><button class="btn btn-dark" onclick="claimLoyalty()">Claim Free Pizza</button><button class="btn btn-light" onclick="toast('Loyalty: 120 Points = Rs 120 OFF')">Check Points</button></div></div></div></section>
+<section class="section" id="menu"><div class="container"><div class="section-title"><small>Emaan Pizza - Pichnand Menu</small><h2>Explore Our Full Menu</h2><p>Pizza, Burgers, Shawarma, Paratha Roll, Loaded Fries, Shakes. All fresh, all halal, made for Pichnand taste.</p></div><div class="search-row"><input id="menuSearch" placeholder="Search - e.g Tikka Pizza, Zinger, Shawarma..." oninput="filterMenu()"><select id="sortSelect" onchange="sortMenu()" style="max-width:180px"><option value="all">Sort: Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="rating">Top Rated</option><option value="name">Name A-Z</option></select><select id="vegFilter" onchange="filterMenu()" style="max-width:160px"><option value="all">All Food</option><option value="veg">Vegetarian Only</option><option value="spicy">Spicy Only</option></select></div><div class="category-bar"><button class="cat-btn active" onclick="filterCat('all',this)">All Items</button><button class="cat-btn" onclick="filterCat('pizza',this)">Pizza</button><button class="cat-btn" onclick="filterCat('burger',this)">Burger / Zinger</button><button class="cat-btn" onclick="filterCat('shawarma',this)">Shawarma / Roll</button><button class="cat-btn" onclick="filterCat('fries',this)">Fries / Loaded</button><button class="cat-btn" onclick="filterCat('drinks',this)">Drinks / Shakes</button><button class="cat-btn" onclick="filterCat('family',this)">Family Deals</button><button class="cat-btn" onclick="filterCat('dessert',this)">Desserts</button></div><div class="size-bar"><span style="font-weight:700;font-size:13px">Pizza Size:</span><button class="size-btn active" onclick="setSize('Small 10 inch',this)">Small 10 inch</button><button class="size-btn" onclick="setSize('Medium 13 inch',this)">Medium 13 inch</button><button class="size-btn" onclick="setSize('Large 16 inch',this)">Large 16 inch</button><button class="size-btn" onclick="setSize('Family 20 inch',this)">Family 20 inch</button><span id="sizeInfo" style="font-size:13px;color:#78716c">Selected: Small 10 inch - Price as shown</span></div><div class="menu-grid" id="menuGrid"></div><div class="flex" style="justify-content:center;margin-top:22px"><button class="btn btn-light" onclick="loadMore()">Load More Items</button><button class="btn btn-dark" onclick="downloadMenu()">Download Menu (Print)</button><button class="btn btn-primary" onclick="showFavourites()">My Favourites</button><button class="btn btn-green" onclick="showAllMenu()">Show All Menu</button></div><p style="text-align:center;margin-top:14px;color:#78716c;font-size:13px">Showing <span id="menuCount">30</span> items | Pichnand Delivery Rs 100 (Free above Rs 1200) | All prices include GST | Freshly cooked on order</p></div></section>
+<section class="section" style="background:#fff7ed;padding:50px 0"><div class="container"><div class="features-grid"><div class="feature-box"><div class="feature-icon">25 MIN</div><h3>25 Min Delivery in Pichnand</h3><p>Pichnand, Dhurnal Road, Talagang Road - hot delivery.</p></div><div class="feature-box"><div class="feature-icon">FRESH</div><h3>Fresh Dough Daily</h3><p>Fresh dough every day, imported cheese, halal meat.</p></div><div class="feature-box"><div class="feature-icon">HALAL</div><h3>100 Percent Halal</h3><p>100 percent halal chicken, clean kitchen, hygienic.</p></div><div class="feature-box"><div class="feature-icon">PAY</div><h3>COD + JazzCash</h3><p>Cash on Delivery, JazzCash, EasyPaisa accepted.</p></div></div></div></section>
+<section class="section" id="builder"><div class="container"><div class="section-title"><small>Build Your Own Pizza</small><h2>Make Your Own Pizza</h2><p>Select size, crust, sauce and toppings - price updates live.</p></div><div class="reservation-grid"><div class="builder-box"><h3>Step 1 - Size</h3><div class="flex mt"><button class="topping selected" onclick="selectBuilder(this,'size','Small - Rs 699')">Small 10 inch - Rs 699</button><button class="topping" onclick="selectBuilder(this,'size','Medium - Rs 999')">Medium 13 inch - Rs 999</button><button class="topping" onclick="selectBuilder(this,'size','Large - Rs 1299')">Large 16 inch - Rs 1299</button></div><h3 class="mt">Step 2 - Crust</h3><div class="flex mt"><button class="topping selected" onclick="selectBuilder(this,'crust','Thin Crust')">Thin Crust</button><button class="topping" onclick="selectBuilder(this,'crust','Thick Crust')">Thick Crust</button><button class="topping" onclick="selectBuilder(this,'crust','Cheese Burst')">Cheese Burst + Rs 200</button><button class="topping" onclick="selectBuilder(this,'crust','Stuffed Crust')">Stuffed Crust + Rs 250</button></div><h3 class="mt">Step 3 - Sauce</h3><div class="flex mt"><button class="topping selected" onclick="selectBuilder(this,'sauce','Tomato Sauce')">Tomato Sauce</button><button class="topping" onclick="selectBuilder(this,'sauce','BBQ Sauce')">BBQ Sauce</button><button class="topping" onclick="selectBuilder(this,'sauce','Garlic Mayo')">Garlic Mayo</button></div><h3 class="mt">Step 4 - Toppings</h3><div class="flex mt"><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Extra Cheese</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Chicken Tikka</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Fajita</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Mushroom</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Onion + Capsicum</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Jalapeno</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Olives</button><button class="topping" onclick="this.classList.toggle('selected');updateBuilder()">Sweet Corn</button></div></div><div class="builder-box"><h3>Your Custom Pizza</h3><p id="builderSummary" style="color:#78716c;margin-top:10px">Size: Small - Rs 699<br>Crust: Thin Crust<br>Sauce: Tomato Sauce<br>Toppings: None</p><h2 id="builderPrice" style="margin-top:14px;color:#dc2626">Total: Rs 699</h2><div class="flex mt"><button class="btn btn-primary" onclick="addCustomPizza()">Add Custom Pizza to Cart</button><button class="btn btn-light" onclick="toast('Builder reset')">Reset Builder</button></div><p style="font-size:12px;color:#78716c;margin-top:10px">Each extra topping Rs 100. Cheese Burst Rs 200 extra. Stuffed Crust Rs 250 extra.</p><div style="margin-top:16px;background:#fff7ed;padding:14px;border-radius:12px"><b>Chef Recommendation:</b><br>Large + Cheese Burst + Tikka + Extra Cheese = Best Seller in Pichnand</div></div></div></div></section>
+<section class="section" id="deals"><div class="container"><div class="deal-section"><div><span class="offer-badge">PICHNAND DHAMAKA DEAL</span><h2>Emaan Family Deal - Only Rs 1999</h2><p>1 Large Pizza + 4 Zinger + 4 Cold Drinks + Loaded Fries. Pichnand's most famous deal. Save Rs 1000. Perfect for family dinner.</p><div class="timer-box"><div class="timer-item"><b id="dealH">04</b><span>Hours</span></div><div class="timer-item"><b id="dealM">15</b><span>Minutes</span></div><div class="timer-item"><b id="dealS">45</b><span>Seconds</span></div></div><div class="flex mt"><button class="btn btn-primary" onclick="addDeal()">Claim Deal - Add to Cart</button><button class="btn btn-light" onclick="showCoupon()">Get Coupon EMAAN25</button><button class="btn btn-orange" onclick="addDeal2()">Add Duo Deal Rs 1499</button></div><p style="font-size:13px;opacity:.8;margin-top:10px">Coupon EMAAN25 gives extra 25% OFF - Pichnand only. Also try PICHNAND10 for 10% OFF, WELCOME10 for new customers.</p></div><div><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" style="width:100%;height:260px;object-fit:cover;border-radius:16px"><p style="text-align:center;margin-top:10px;font-size:13px;opacity:.8">Deal valid till 12 AM today - Pichnand only</p><div class="flex" style="justify-content:center;margin-top:10px"><button class="btn btn-light" onclick="toast('Deal shared on WhatsApp')">Share Deal</button><button class="btn btn-light" onclick="toast('Deal saved')">Save Deal</button></div></div></div></div></section>
+<section class="section" id="track"><div class="container"><div class="section-title"><small>Live Order Tracking</small><h2>Track Your Order - Pichnand</h2></div><div class="track-box"><div class="flex"><input id="trackInput" placeholder="Enter Order Number - e.g EM1234" style="max-width:300px"><button class="btn btn-primary" onclick="trackOrder()">Track Order</button><button class="btn btn-light" onclick="simulateTrack()">Demo - Simulate Delivery</button><button class="btn btn-green" onclick="toast('Calling rider - Pichnand')">Call Rider</button></div><div class="track-steps mt" id="trackSteps"><div class="track-step done"><div class="dot">1</div><b>Order Received</b><p style="font-size:12px;color:#78716c">Confirmed</p></div><div class="track-step active"><div class="dot">2</div><b>Preparing</b><p style="font-size:12px;color:#78716c">In Kitchen</p></div><div class="track-step"><div class="dot">3</div><b>On The Way</b><p style="font-size:12px;color:#78716c">Rider in Pichnand</p></div><div class="track-step"><div class="dot">4</div><b>Delivered</b><p style="font-size:12px;color:#78716c">Enjoy</p></div></div><div class="progress"><div id="trackProgress" style="width:35%"></div></div><p id="trackText" style="margin-top:12px;font-weight:600">Your order is being prepared in kitchen. Estimated time: 20 minutes. Rider will arrive in Pichnand soon.</p><div class="flex mt"><button class="btn btn-light" onclick="toast('Order history opened')">Order History</button><button class="btn btn-light" onclick="toast('Reorder last order - Pichnand')">Reorder Last Order</button><button class="btn btn-light" onclick="showOrderHistory()">Show My Orders</button></div><div id="orderHistoryBox" class="mt"></div></div></div></section>
+<section class="section" id="about"><div class="container"><div class="about-grid"><div><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800"></div><div><small style="color:#dc2626;font-weight:800;letter-spacing:2px">ABOUT EMAAN PIZZA - PICHNAND</small><h2 style="font-size:34px;margin:10px 0">Pichnand's Own Pizza Point</h2><p style="color:#78716c">Emaan Pizza is located in Main Bazaar, Pichnand. Our mission is simple - give Pichnand and nearby villages city-level taste at fair price. Fresh dough, imported cheese, halal chicken.</p><ul class="check-list"><li><b>Location:</b> Main Bazaar, Pichnand - Near Jamia Masjid</li><li><b>Fresh Daily:</b> Dough made fresh every day, cheese imported</li><li><b>Family Friendly:</b> Family hall, takeaway, home delivery</li><li><b>Fast Service:</b> Dine-in, Takeaway, Pichnand Delivery in 25 min</li><li><b>Staff:</b> 12 trained staff, 2 delivery riders in Pichnand</li><li><b>Since:</b> Serving Pichnand since 2023, 500+ daily customers</li></ul><div class="flex"><button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Explore Menu</button><button class="btn btn-light" onclick="openModal('about')">Our Story</button><button class="btn btn-light" onclick="openModal('nutrition')">Nutrition Info</button></div></div></div></div></section>
+<section class="section" id="gallery"><div class="container"><div class="section-title"><small>Gallery</small><h2>Emaan Pizza Gallery - Pichnand</h2></div><div class="gallery-grid"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400"></div></div></section>
+<section class="section" id="reviews"><div class="container"><div class="section-title"><small>Reviews - Pichnand</small><h2>What Pichnand People Say</h2></div><div class="testi-grid"><div class="testi"><div class="stars">***** 5.0</div><p>"Best pizza in Pichnand. Full cheese, taste like city. Delivery is also fast from Main Bazaar."</p><b>Usman - Pichnand</b><p style="margin:0">Main Bazaar, Pichnand</p></div><div class="testi"><div class="stars">***** 5.0</div><p>"Family deal is best value. Kids loved Zinger and Pizza both. Price is also reasonable."</p><b>Ayesha - Dhurnal Road</b><p style="margin:0">Dhurnal Road, Pichnand</p></div><div class="testi"><div class="stars">***** 4.9</div><p>"I order daily. Quality never drops. Emaan Special Pizza is a must try."</p><b>Imran - Talagang Road</b><p style="margin:0">Talagang Road, Pichnand</p></div></div><div class="testi-grid mt"><div class="testi"><div class="stars">***** 5.0</div><p>"Shawarma is very tasty. Garlic sauce is best."</p><b>Bilal - Pichnand</b><p style="margin:0">Near School, Pichnand</p></div><div class="testi"><div class="stars">***** 4.8</div><p>"Loaded fries are amazing. Full loaded, cheese full."</p><b>Fatima - Pichnand</b><p style="margin:0">Jamia Masjid Area</p></div><div class="testi"><div class="stars">***** 5.0</div><p>"Birthday party ke liye family deal liya tha. Sab ko pasand aaya."</p><b>Ahmed - Dhurnal</b><p style="margin:0">Dhurnal Road</p></div></div><div style="background:#fff;border:1px solid #e7e5e4;border-radius:16px;padding:20px;margin-top:20px"><h3>Write Your Review - Pichnand</h3><div class="flex mt"><input id="revName" placeholder="Your name" style="max-width:220px"><select id="revStars" style="max-width:160px"><option>5 Stars</option><option>4 Stars</option><option>3 Stars</option><option>2 Stars</option><option>1 Star</option></select><input id="revText" placeholder="Write your review..."><button class="btn btn-primary" onclick="addReview()">Submit Review</button></div><div id="reviewList" class="mt"></div></div></div></section>
+<section class="section" id="faq"><div class="container"><div class="section-title"><small>FAQ</small><h2>Frequently Asked Questions - Pichnand</h2></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you deliver in Pichnand villages? <span>+</span></div><div class="faq-a">Yes. We deliver in Main Bazaar Pichnand, Dhurnal Road, Talagang Road, Jamia Masjid area and nearby villages. Delivery Rs 100, Free above Rs 1200.</div></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What payment methods do you accept? <span>+</span></div><div class="faq-a">Cash on Delivery, JazzCash, EasyPaisa and Bank Transfer. All accepted in Pichnand.</div></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is your food 100% Halal? <span>+</span></div><div class="faq-a">Yes, 100% Halal. Chicken, cheese and all ingredients are halal certified.</div></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does delivery take? <span>+</span></div><div class="faq-a">Average 25 minutes in Pichnand. During rush time 35-40 minutes.</div></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you have a loyalty program? <span>+</span></div><div class="faq-a">Yes. Order 5 times, get 6th Pizza FREE. You also earn points on every order.</div></div><div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I book table for birthday party? <span>+</span></div><div class="faq-a">Yes. Use Table Booking form. For 8+ guests, select Family Hall. We also arrange birthday cake on request.</div></div></div></section>
+<section class="section"><div class="container"><div class="section-title"><small>Why Emaan Pizza Pichnand</small><h2>More Features - Full System</h2></div><div class="extra-grid"><div class="extra-box"><h3>01. Catering Service</h3><p>We provide catering for weddings, birthdays, school events in Pichnand. Call 0300-1234567 for booking.</p><button class="btn btn-primary mt" onclick="toast('Catering enquiry - Pichnand')">Book Catering</button></div><div class="extra-box"><h3>02. Birthday Party Hall</h3><p>Family hall available for birthday parties. Free decoration for 8+ guests. Cake available on request.</p><button class="btn btn-dark mt" onclick="toast('Birthday hall booked')">Book Hall</button></div><div class="extra-box"><h3>03. Student Discount</h3><p>Show student card and get 10% OFF. Use code STUDENT10. Valid for Pichnand students only.</p><button class="btn btn-orange mt" onclick="toast('Student discount applied')">Claim Discount</button></div></div><div class="extra-grid mt"><div class="extra-box"><h3>04. Home Delivery Tracking</h3><p>Track your rider live. Call rider directly from website. Estimated time shown on tracking page.</p><button class="btn btn-light mt" onclick="document.getElementById('track').scrollIntoView({behavior:'smooth'})">Track Now</button></div><div class="extra-box"><h3>05. Gift Cards</h3><p>Buy gift card for your loved ones in Pichnand. Rs 500, Rs 1000, Rs 2000 cards available at counter.</p><button class="btn btn-light mt" onclick="toast('Gift card - Visit counter Pichnand')">Buy Gift Card</button></div><div class="extra-box"><h3>06. Feedback System</h3><p>Your feedback matters. Write review and get 50 loyalty points. We read every review in Pichnand.</p><button class="btn btn-light mt" onclick="document.getElementById('reviews').scrollIntoView({behavior:'smooth'})">Write Review</button></div></div></div></section>
+<section class="section" id="admin"><div class="container"><div class="section-title"><small>Admin Dashboard - Owner Only</small><h2>Emaan Pizza - Full Admin System</h2><p>Full system - Orders, Sales, Menu Management, Customers, Reports.</p></div><div class="admin-grid"><div class="admin-card"><span>Today Orders</span><b id="adminOrders">24</b><span>Rs 38,500 today</span></div><div class="admin-card"><span>Total Customers</span><b>1,240</b><span>Pichnand + Nearby</span></div><div class="admin-card"><span>Best Seller</span><b>Emaan Special</b><span>142 sold this week</span></div><div class="admin-card"><span>Rating</span><b>4.9 / 5</b><span>900+ Reviews</span></div></div><div class="admin-grid"><div class="admin-card"><span>Today Revenue</span><b>Rs 38,500</b><span>+18% vs yesterday</span></div><div class="admin-card"><span>Pending Orders</span><b>3</b><span>Need attention</span></div><div class="admin-card"><span>Delivery Riders</span><b>2 Active</b><span>In Pichnand</span></div><div class="admin-card"><span>Menu Items</span><b id="adminMenuCount">30</b><span>Active</span></div></div><div class="admin-grid"><div class="admin-card"><span>Weekly Revenue</span><b>Rs 2,45,000</b><span>Last 7 days</span></div><div class="admin-card"><span>Monthly Revenue</span><b>Rs 9,80,000</b><span>This month</span></div><div class="admin-card"><span>Repeat Customers</span><b>68%</b><span>Very good</span></div><div class="admin-card"><span>Average Order</span><b>Rs 1,450</b><span>Per order</span></div></div><div class="res-card"><h3>Recent Orders - Pichnand</h3><table><thead><tr><th>Order No</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody id="adminTable"><tr><td>EM1024</td><td>Usman - Pichnand</td><td>Tikka Pizza + 2 Zinger</td><td>Rs 1,899</td><td>Preparing</td><td><button class="btn btn-light" onclick="toast('Order marked as On The Way')">Update</button></td></tr><tr><td>EM1023</td><td>Ayesha - Dhurnal</td><td>Family Deal</td><td>Rs 1,999</td><td>Delivered</td><td><button class="btn btn-light" onclick="toast('Order already delivered')">View</button></td></tr><tr><td>EM1022</td><td>Imran - Talagang</td><td>Fajita Pizza</td><td>Rs 1,099</td><td>On The Way</td><td><button class="btn btn-light" onclick="toast('Rider called')">Call Rider</button></td></tr><tr><td>EM1021</td><td>Bilal - Pichnand</td><td>2 Shawarma + Fries</td><td>Rs 980</td><td>Delivered</td><td><button class="btn btn-light" onclick="toast('Order viewed')">View</button></td></tr><tr><td>EM1020</td><td>Fatima - Pichnand</td><td>Emaan Special Pizza</td><td>Rs 1,299</td><td>Delivered</td><td><button class="btn btn-light" onclick="toast('Order viewed')">View</button></td></tr></tbody></table><div class="flex mt"><input id="adminNewItem" placeholder="Add new menu item name" style="max-width:260px"><input id="adminNewPrice" placeholder="Price" type="number" style="max-width:140px"><select id="adminNewCat" style="max-width:160px"><option value="pizza">Pizza</option><option value="burger">Burger</option><option value="shawarma">Shawarma</option><option value="fries">Fries</option><option value="drinks">Drinks</option><option value="dessert">Dessert</option></select><button class="btn btn-primary" onclick="addAdminItem()">Add Menu Item</button><button class="btn btn-dark" onclick="exportOrders()">Export Orders</button><button class="btn btn-light" onclick="printReport()">Print Report</button><button class="btn btn-green" onclick="exportMenu()">Export Menu</button></div></div></div></section>
+<section class="section" id="reservation"><div class="container"><div class="section-title"><small>Book Table - Pichnand</small><h2>Reserve Your Table in Pichnand</h2><p>Book in 30 seconds. We will call to confirm.</p></div><div class="reservation-grid"><div class="res-card"><h3>Table Reservation - Emaan Pizza Pichnand</h3><div class="form-row"><input id="resName" placeholder="Full Name"><input id="resPhone" placeholder="Phone Number"></div><div class="form-row"><input id="resDate" type="date"><select id="resTime"><option>01:00 PM</option><option>03:00 PM</option><option>05:00 PM</option><option>07:00 PM</option><option>09:00 PM</option><option>11:00 PM</option></select></div><div class="form-row"><select id="resGuests"><option>2 Guests</option><option>4 Guests</option><option>6 Guests</option><option>8+ Guests - Family Hall</option></select><select id="resOcc"><option>Birthday</option><option>Family Dinner</option><option>Friends Meetup</option><option>Normal</option></select></div><textarea id="resNote" rows="3" placeholder="Special request - e.g Birthday cake, Family hall..."></textarea><button class="btn btn-primary mt" style="width:100%" onclick="bookTable()">Confirm Reservation - Pichnand</button><p id="resResult" style="margin-top:12px;font-weight:600;color:#16a34a"></p><div class="mt" style="background:#fff7ed;padding:12px;border-radius:10px;font-size:13px"><b>Note:</b> For birthday, we provide free decoration for Family Hall booking.</div></div><div class="res-card"><h3>Visit Us - Emaan Pizza Pichnand</h3><p><b>Address:</b> Main Bazaar, Pichnand, Near Jamia Masjid, Pichnand</p><p class="mt"><b>Timings:</b><br>Mon - Sun: 12:00 PM - 12:00 AM<br>Friday: 02:00 PM - 12:00 AM (After Jumma)</p><p class="mt"><b>Phone / WhatsApp:</b> 0300-1234567<br><b>Phone 2:</b> 0301-7654321<br><b>Facebook:</b> Emaan Pizza Pichnand<br><b>Email:</b> emaanpizza.pichnand@gmail.com</p><div class="flex mt"><button class="btn btn-green" onclick="toast('Opening WhatsApp - Emaan Pizza Pichnand...')">WhatsApp Order</button><button class="btn btn-light" onclick="toast('Calling Emaan Pizza Pichnand...')">Call Now</button><button class="btn btn-dark" onclick="toast('Location: Main Bazaar Pichnand')">Get Directions</button></div><div style="margin-top:16px;background:#fff7ed;padding:14px;border-radius:12px"><b>Delivery Areas - Pichnand:</b><br>Main Bazaar Pichnand, Dhurnal Road, Talagang Road, Near School, Jamia Masjid Area, Nearby Villages - Delivery Rs 100 (Free above Rs 1200)</div><div style="margin-top:12px;background:#f5f5f4;padding:12px;border-radius:10px;font-size:13px"><b>Catering Available:</b> For weddings, birthday, school events in Pichnand - Call 0300-1234567</div></div></div></div></section>
+<footer class="footer" id="contact"><div class="container"><div class="footer-grid"><div><h3>EMAAN PIZZA - PICHNAND</h3><p>Pichnand's own pizza point. Best pizza, best price, fast delivery in Pichnand.</p><div class="newsletter"><input id="newsEmail" placeholder="Your email for offers"><button class="btn btn-primary" onclick="subscribe()">Join</button></div><p style="margin-top:12px;font-size:13px">Get 10% OFF on first order - Join newsletter - Code: WELCOME10</p></div><div><h3>Quick Links</h3><a href="#menu">Full Menu</a><a href="#deals">Today Deals</a><a href="#builder">Build Pizza</a><a href="#reservation">Book Table</a><a href="#admin">Admin</a></div><div><h3>Menu</h3><a href="#menu">Pizza</a><a href="#menu">Zinger / Burger</a><a href="#menu">Shawarma / Roll</a><a href="#menu">Fries / Shakes</a></div><div><h3>Contact - Pichnand</h3><p>Main Bazaar, Pichnand</p><p>0300-1234567</p><p>emaanpizza.pichnand@gmail.com</p><p>Open: 12 PM - 12 AM</p></div></div><div class="copyright">Copyright 2026 Emaan Pizza - Pichnand. All Rights Reserved. Made with love in Pichnand. | Full Project - 1000+ Lines - All Features Implemented</div></div></footer>
+<a class="floating" href="#menu" onclick="toast('WhatsApp order opened - Emaan Pizza Pichnand')">WhatsApp Order - Pichnand - 0300-1234567</a>
+<button class="btn btn-dark" style="position:fixed;bottom:20px;right:20px;z-index:120;border-radius:30px" onclick="toggleChat()">Chat With Us</button>
+<div class="chat-widget" id="chatWidget"><div class="chat-head"><span>Emaan Pizza - Pichnand - Live Chat</span><button onclick="toggleChat()" style="background:none;color:#fff;font-weight:800">X</button></div><div class="chat-body" id="chatBody"><div class="chat-msg bot">Assalam-o-Alaikum! Welcome to Emaan Pizza Pichnand. What would you like to order today?</div></div><div class="flex" style="padding:10px"><input id="chatInput" placeholder="Type message..."><button class="btn btn-primary" onclick="sendChat()">Send</button></div></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-head"><h3>Your Cart - Emaan Pizza</h3><button class="btn btn-light" onclick="closeCart()">Close X</button></div><div class="cart-body" id="cartItems"><p style="text-align:center;color:#78716c;padding:30px 0">Your cart is empty.<br>Add something delicious from Emaan Pizza Pichnand.</p></div><div class="cart-foot"><div class="total-row"><span>Subtotal</span><span id="subTotal">Rs 0</span></div><div class="total-row"><span>Delivery - Pichnand</span><span id="delCharge">Rs 100</span></div><div class="total-row"><span>Discount (EMAAN25)</span><span id="discount">- Rs 0</span></div><div class="total-row"><span>Rider Tip</span><span id="tipDisplay">Rs 0</span></div><div class="total-row grand"><span>Total</span><span id="grandTotal">Rs 0</span></div><div class="flex mt"><input id="couponInput" placeholder="Coupon - Try EMAAN25"><button class="btn btn-dark" onclick="applyCoupon()">Apply</button></div><div class="flex mt"><input id="tipInput" type="number" placeholder="Rider Tip (Optional) - e.g 100"><button class="btn btn-light" onclick="applyTip()">Add Tip</button></div><button class="btn btn-primary mt" style="width:100%" onclick="checkout()">Checkout - Cash on Delivery</button><button class="btn btn-light mt" style="width:100%" onclick="clearCart()">Clear Cart</button><button class="btn btn-light mt" style="width:100%" onclick="saveCart()">Save Cart For Later</button></div></div>
+<div class="modal" id="checkoutModal"><div class="modal-box"><h3>Checkout - Emaan Pizza Pichnand</h3><p style="color:#78716c;font-size:13px">Fill details, we will call to confirm</p><input id="coName" placeholder="Full Name" class="mt"><input id="coPhone" placeholder="Phone Number" class="mt"><input id="coAddress" placeholder="Full Address - House, Street, Area, Pichnand" class="mt"><select id="coArea" class="mt"><option>Main Bazaar Pichnand</option><option>Dhurnal Road</option><option>Talagang Road</option><option>Near Jamia Masjid</option><option>Near Govt School</option><option>Other - Pichnand</option></select><select id="coPay" class="mt"><option>Cash on Delivery</option><option>JazzCash</option><option>EasyPaisa</option><option>Bank Transfer</option></select><select id="coTime" class="mt"><option>Deliver ASAP - 25 Min</option><option>Deliver in 1 Hour</option><option>Schedule for Dinner - 7 PM</option><option>Schedule for Lunch - 1 PM</option></select><textarea id="coNote" rows="2" placeholder="Delivery note - e.g Near gate..." class="mt"></textarea><div class="flex mt"><button class="btn btn-primary" onclick="placeOrder()">Place Order - Pichnand</button><button class="btn btn-light" onclick="closeCheckout()">Cancel</button></div><p id="orderSuccess" style="margin-top:12px;font-weight:700;color:#16a34a"></p></div></div>
+<div class="modal" id="infoModal"><div class="modal-box"><h3 id="infoTitle">Our Story</h3><p id="infoText" style="margin-top:10px;color:#78716c">Emaan Pizza is in Main Bazaar Pichnand. We want to give Pichnand city-level pizza taste - fresh dough, imported cheese, halal chicken, fair price.</p><button class="btn btn-primary mt" onclick="closeInfo()">Close</button></div></div>
 <script>
-/* FIREBASE CONFIG - PASTE HERE */
-const firebaseConfig = null;
-function syncToFirebase(){
-if(!firebaseConfig){ alert('Firebase config not added yet. Paste your Firebase config in script to enable cloud sync. Data is currently saved in browser.'); return; }
-alert('Syncing to Firebase...');
-}
-const KEY='GPS_DHOK_JHATT_DB_V6';
-let DB=null, authMode='login', currentTab='overview';
-const ADMIN_EMAIL='harisawan.pk.@school.tm';
-const ADMIN_PASS='haris786786786';
-function seed(){
-return {
-version:9,
-users:[{id:'usr_admin_1',name:'Haris Awan',email:ADMIN_EMAIL,password:ADMIN_PASS,role:'Admin',subject:'Overall Administration & Management',phone:'+92 300 0000000'}],
-students:[],attendance:[],reports:[],homework:[],hwSubs:[],meetings:[],chats:[],timetable:[],fees:[],results:[],leaves:[],notices:[],books:[],quizzes:[],quizAttempts:[],salary:[],inventory:[],transport:[],events:[],complaints:[],admissions:[],discipline:[],health:[],alumni:[],examSchedule:[],
-currentUser:null,
-settings:{school:'Government Primary School Dhok Jhatt',session:'2026-2027'}
-};
-}
-function load(){
-try{
-let raw=localStorage.getItem(KEY);
-if(!raw){ DB=seed(); save(); return; }
-DB=JSON.parse(raw);
-let s=seed();
-Object.keys(s).forEach(k=>{ if(DB[k]===undefined) DB[k]=s[k]; });
-if(!DB.users.find(u=>u.email===ADMIN_EMAIL)){ DB.users.unshift(s.users[0]); }
-else{ let a=DB.users.find(u=>u.email===ADMIN_EMAIL); a.password=ADMIN_PASS; a.name='Haris Awan'; a.role='Admin'; }
-DB.users.forEach(u=>{ if(!u.role) u.role='New User'; });
-save();
-}catch(e){ DB=seed(); save(); }
-}
-function save(){ localStorage.setItem(KEY, JSON.stringify(DB)); }
-function uid(p){ return p+'_'+Date.now()+'_'+Math.floor(Math.random()*999); }
-function esc(v){ return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-function me(){ return DB.users.find(u=>u.id===DB.currentUser)||null; }
-function canApprove(){ let u=me(); return u&&(u.role==='Admin'||u.role==='Head Teacher'); }
-function isAdmin(){ let u=me(); return u&&u.role==='Admin'; }
-function isNewUser(){ let u=me(); return u&&u.role==='New User'; }
-function todayStr(){ return new Date().toISOString().slice(0,10); }
-function gradeFromMarks(m){ m=Number(m); if(m>=90) return 'A+'; if(m>=80) return 'A'; if(m>=70) return 'B'; if(m>=60) return 'C'; if(m>=50) return 'D'; return 'F'; }
-function openAuth(m){ setAuthMode(m); document.getElementById('authModal').classList.add('open'); }
-function closeAuth(){ document.getElementById('authModal').classList.remove('open'); }
-function setAuthMode(m){
-authMode=m;
-document.getElementById('tabLogin').className=m==='login'?'flex-1 py-2 rounded-full bg-blue-600 text-white font-bold text-sm':'flex-1 py-2 rounded-full font-bold text-sm text-slate-500';
-document.getElementById('tabSignup').className=m==='signup'?'flex-1 py-2 rounded-full bg-blue-600 text-white font-bold text-sm':'flex-1 py-2 rounded-full font-bold text-sm text-slate-500';
-['signupNameWrap','signupSubjectWrap','signupPhoneWrap'].forEach(id=>document.getElementById(id).classList.toggle('hidden',m!=='signup'));
-document.getElementById('signupNote').classList.toggle('hidden',m!=='signup');
-document.getElementById('authSubmit').innerText=m==='login'?'Login':'Create Account';
-document.getElementById('authSwitchText').innerText=m==='login'?"If you Don't Have Account Sign Up":"Already have an account? Login";
-}
-function switchAuth(){ setAuthMode(authMode==='login'?'signup':'login'); }
-function showErr(t){ let e=document.getElementById('authError'); e.innerText=t; e.classList.remove('hidden'); }
-function doAuth(){
-let email=document.getElementById('authEmail').value.trim().toLowerCase();
-let pass=document.getElementById('authPass').value;
-if(!email||!pass) return showErr('Email & Password required');
-if(authMode==='login'){
-let u=DB.users.find(x=>x.email===email&&x.password===pass);
-if(!u) return showErr('Invalid email or password');
-DB.currentUser=u.id; save(); closeAuth(); renderApp();
-}else{
-let name=document.getElementById('authName').value.trim();
-let subj=document.getElementById('authSubject').value.trim()||'General';
-let ph=document.getElementById('authPhone').value.trim();
-if(!name) return showErr('Full Name required');
-if(DB.users.find(x=>x.email===email)) return showErr('Email already exists. Please Login.');
-let nu={id:uid('usr'),name,email,password:pass,role:'New User',subject:subj,phone:ph};
-DB.users.push(nu); DB.currentUser=nu.id; save(); closeAuth(); renderApp();
-alert('Account created as New User! Admin Haris Awan will assign your role soon - Teacher / Parent / Student.');
-}
-}
-function logout(){ DB.currentUser=null; save(); document.getElementById('dashboard').classList.add('hidden'); document.getElementById('landing').classList.remove('hidden'); window.scrollTo(0,0); }
-function goTab(t){
-if(isNewUser()&&t!=='overview'&&t!=='settings'){ alert('You are a New User. You can access this tab after Admin assigns you a role.'); return; }
-currentTab=t;
-document.querySelectorAll('.tabPage').forEach(p=>p.classList.add('hidden'));
-let el=document.getElementById('tab-'+t); if(el) el.classList.remove('hidden');
-document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));
-renderAll();
-}
-function renderTabs(){
-if(isNewUser()){ document.getElementById('tabsBar').innerHTML='<span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-bold">⏳ New User • Waiting for Admin • Please Wait For Role Assignment</span>'; return; }
-let tabs=[['overview','🏠 Overview'],['parent','👨‍👩‍👧 Parent'],['studentportal','🎓 Student Portal'],['students','👨‍🎓 Students'],['attendance','📅 Attendance'],['reports','📝 Reports'],['homework','📚 HW'],['quiz','📝 Quiz'],['fees','💰 Fees'],['results','🏆 Results'],['salary','💰 Salary'],['timetable','🗓 Timetable'],['leave','🌴 Leave'],['meetings','🤝 Meetings'],['notices','📢 Notices'],['events','📅 Events'],['library','📖 Library'],['inventory','📦 Inventory'],['transport','🚌 Transport'],['certificates','📜 Certificates'],['complaints','📩 Complaints'],['chat','💬 Chat'],['admissions','📝 Admissions'],['discipline','⚖️ Discipline'],['health','🏥 Health'],['alumni','🎓 Alumni'],['examschedule','📅 Exam Schedule']];
-if(isAdmin()) tabs.push(['staff','👥 Staff & Ranks']);
-tabs.push(['settings','⚙️ Settings']);
-document.getElementById('tabsBar').innerHTML=tabs.map(([k,l])=>'<button type="button" data-tab="'+k+'" onclick="goTab(\''+k+'\')" class="tab-btn px-4 py-2 rounded-full text-sm font-semibold bg-white shadow-sm border '+(k===currentTab?'active':'')+'">'+l+'</button>').join('');
-let b=document.getElementById('addMeetingBtn'); if(b) b.style.display=canApprove()?'':'none';
-}
-function onGlobalSearch(v){ if(isNewUser()) return; let i=document.getElementById('studentSearch'); if(i){ i.value=v; goTab('students'); } }
-function renderApp(){
-let u=me(); if(!u) return;
-document.getElementById('landing').classList.add('hidden');
-document.getElementById('dashboard').classList.remove('hidden');
-document.getElementById('userBadge').innerText=u.name+' ('+u.role+')';
-document.getElementById('welcomeText').innerText='Welcome back, '+u.name;
-document.getElementById('welcomeSub').innerText='Role: '+u.role+' • Subject: '+u.subject;
-document.getElementById('welcomeDate').innerText=new Date().toLocaleDateString('en-PK',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-document.getElementById('avatarCircle').innerText=u.name.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
-document.getElementById('rolePill').innerText=u.role;
-document.getElementById('newUserBox').classList.toggle('hidden',!isNewUser());
-document.getElementById('newUserInfo').innerText=u.name+' • '+u.email+' • Joined as New User';
-renderTabs(); renderAll(); goTab('overview');
-}
-function drawChart(){
-let c=document.getElementById('attChart'); if(!c) return;
-let ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
-let labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']; let vals=[0,0,0,0,0,0,0];
-DB.attendance.forEach(a=>{ let d=new Date(a.date||todayStr()).getDay(); let idx=(d+6)%7; if(a.status==='Present') vals[idx]++; });
-let max=Math.max(...vals,1);
-vals.forEach((v,i)=>{ let h=(v/max)*110; let x=30+i*80; ctx.fillStyle='#2563eb'; ctx.fillRect(x,140-h,42,h); ctx.fillStyle='#64748b'; ctx.font='12px Inter'; ctx.fillText(labels[i],x+6,158); ctx.fillStyle='#0f172a'; ctx.font='bold 12px Inter'; ctx.fillText(v,x+12,132-h); });
-let rate=DB.students.length?Math.round(DB.attendance.filter(a=>a.status==='Present').length/Math.max(DB.students.length,1)*100):0;
-let el=document.getElementById('attRateTop'); if(el) el.innerText=rate+'% Present';
-}
-function renderAll(){
-if(!DB) return;
-let paid=DB.fees.filter(f=>f.status==='Paid').reduce((s,f)=>s+Number(f.amount||0),0);
-let due=DB.fees.reduce((s,f)=>s+Number(f.amount||0),0);
-document.getElementById('statStudents').innerText=DB.students.length;
-document.getElementById('statFaculty').innerText=DB.users.length;
-document.getElementById('statNewUsers').innerText=DB.users.filter(u=>u.role==='New User').length+' New Users';
-document.getElementById('statQuiz').innerText=DB.quizzes.length;
-document.getElementById('statQuizSub').innerText=DB.quizAttempts.length+' Attempts';
-document.getElementById('statFees').innerText='Rs '+paid.toLocaleString();
-document.getElementById('statFeesSub').innerText=DB.fees.filter(f=>f.status==='Paid').length+' Paid';
-document.getElementById('landStudents').innerText=DB.students.length;
-document.getElementById('landTeachers').innerText=DB.users.length;
-document.getElementById('landQuiz').innerText=DB.quizzes.length;
-document.getElementById('feeDue').innerText='Rs '+due.toLocaleString();
-document.getElementById('feePaid').innerText='Rs '+paid.toLocaleString();
-document.getElementById('feePending').innerText='Rs '+(due-paid).toLocaleString();
-let pres=DB.attendance.filter(a=>a.status==='Present').length;
-let abs=DB.attendance.filter(a=>a.status==='Absent').length;
-let late=DB.attendance.filter(a=>a.status==='Late').length;
-document.getElementById('attPresent').innerText=pres;
-document.getElementById('attAbsent').innerText=abs;
-document.getElementById('attLate').innerText=late;
-document.getElementById('attRate').innerText=DB.students.length?Math.round(pres/DB.students.length*100)+'%':'0%';
-document.getElementById('noticeDot').classList.toggle('hidden',DB.notices.length===0);
-let opts=DB.students.map(s=>'<option value="'+s.id+'">'+esc(s.name)+' - Roll '+s.roll+' - Class '+s.cls+'</option>').join('');
-['parentStudent','certStudent','idStudent'].forEach(id=>{ let el=document.getElementById(id); if(el){ let cur=el.value; el.innerHTML='<option value="">Select Student</option>'+opts; el.value=cur; } });
-let q=(document.getElementById('studentSearch')?.value||'').toLowerCase();
-let cf=document.getElementById('studentClassFilter')?.value||'';
-let fStu=DB.students.filter(s=>(!q||s.name.toLowerCase().includes(q)||s.roll.toLowerCase().includes(q))&&(!cf||String(s.cls)===cf));
-document.getElementById('studentsTable').innerHTML=fStu.map(s=>{ let fee=DB.fees.find(f=>f.studentId===s.id); return '<tr class="border-t hover:bg-slate-50"><td class="p-3"><div class="flex gap-2 items-center"><div class="w-9 h-9 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold">'+esc(s.name[0])+'</div><div><p class="font-bold">'+esc(s.name)+'</p><p class="text-xs text-slate-500">'+esc(s.address||'Dhok Jhatt')+'</p></div></div></td><td class="p-3">Roll '+esc(s.roll)+'<br><span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Class '+esc(s.cls)+' • Sec '+esc(s.section||'A')+'</span></td><td class="p-3">'+esc(s.father||'-')+'<br><span class="text-xs text-slate-500">'+esc(s.phone||'')+'</span></td><td class="p-3">'+(fee?'<span class="badge '+(fee.status==='Paid'?'bg-emerald-100 text-emerald-700':'bg-red-100 text-red-700')+'">'+fee.status+' Rs '+fee.amount+'</span>':'<span class="text-xs text-slate-400">No Fee</span>')+'</td><td class="p-3"><div class="flex gap-1 flex-wrap"><button type="button" onclick="viewStudent(\''+s.id+'\')" class="border px-2 py-1 rounded-full text-xs font-bold">View</button><button type="button" onclick="editStudent(\''+s.id+'\')" class="border px-2 py-1 rounded-full text-xs font-bold">Edit</button><button type="button" onclick="delStudent(\''+s.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></td></tr>'; }).join('');
-document.getElementById('emptyStudents2').style.display=fStu.length?'none':'block';
-document.getElementById('studentTable').innerHTML=DB.students.map(s=>{ let a=DB.attendance.find(x=>x.studentId===s.id&&x.date===(document.getElementById('attDate')?.value||todayStr())); let st=a?a.status:'—'; return '<tr class="border-t"><td class="p-3">'+esc(s.roll)+'</td><td class="p-3 font-semibold">'+esc(s.name)+'</td><td class="p-3">Class '+esc(s.cls)+'</td><td class="p-3"><span class="badge '+(st==='Present'?'bg-emerald-100 text-emerald-700':st==='Absent'?'bg-red-100 text-red-700':st==='Late'?'bg-amber-100 text-amber-700':'bg-slate-100')+'">'+st+'</span></td><td class="p-3 flex gap-1 flex-wrap"><button type="button" onclick="setAtt(\''+s.id+'\',\'Present\')" class="bg-emerald-600 text-white px-2 py-1 rounded-full text-[11px]">Present</button><button type="button" onclick="setAtt(\''+s.id+'\',\'Absent\')" class="bg-red-500 text-white px-2 py-1 rounded-full text-[11px]">Absent</button><button type="button" onclick="setAtt(\''+s.id+'\',\'Late\')" class="bg-amber-500 text-white px-2 py-1 rounded-full text-[11px]">Late</button></td></tr>'; }).join('');
-document.getElementById('emptyStudents').style.display=DB.students.length?'none':'block';
-let pid=document.getElementById('parentStudent')?.value||''; let ps=DB.students.find(s=>s.id===pid);
-if(ps){ let att=DB.attendance.filter(a=>a.studentId===ps.id); let fees=DB.fees.filter(f=>f.studentId===ps.id); let res=DB.results.filter(r=>r.studentId===ps.id); document.getElementById('parentView').innerHTML='<div class="bg-white rounded-2xl p-4"><p class="font-bold">👨‍🎓 '+esc(ps.name)+'</p><p class="text-xs text-slate-500">Roll '+esc(ps.roll)+' • Class '+esc(ps.cls)+' • Father '+esc(ps.father||'-')+'</p><p class="text-sm mt-2">Attendance: <b>'+att.filter(a=>a.status==='Present').length+' Present / '+att.length+' Total</b></p></div><div class="bg-white rounded-2xl p-4"><p class="font-bold">💰 Fees</p>'+(fees.map(f=>'<p class="text-sm mt-1">Rs '+f.amount+' • '+esc(f.month)+' • <b>'+f.status+'</b></p>').join('')||'<p class="text-sm text-slate-400">No fees</p>')+'</div><div class="bg-white rounded-2xl p-4"><p class="font-bold">🏆 Results</p>'+(res.map(r=>'<p class="text-sm mt-1">'+esc(r.subject)+': '+r.marks+'/100 • '+gradeFromMarks(r.marks)+'</p>').join('')||'<p class="text-sm text-slate-400">No results</p>')+'</div>'; document.getElementById('emptyParent').style.display='none'; }else{ document.getElementById('parentView').innerHTML=''; document.getElementById('emptyParent').style.display='block'; }
-document.getElementById('myHW').innerHTML=DB.homework.slice(-3).map(h=>'<p class="text-sm mt-1">• '+esc(h.title)+' - Class '+h.cls+'</p>').join('')||'<p class="text-sm text-slate-400">No HW</p>';
-document.getElementById('myResults').innerHTML=DB.results.slice(-3).map(r=>{ let s=DB.students.find(x=>x.id===r.studentId); return '<p class="text-sm mt-1">• '+esc(s?s.name:'')+' - '+esc(r.subject)+': '+r.marks+' • '+gradeFromMarks(r.marks)+'</p>'; }).join('')||'<p class="text-sm text-slate-400">No results</p>';
-document.getElementById('myTT').innerHTML=DB.timetable.slice(-3).map(t=>'<p class="text-sm mt-1">• '+esc(t.day)+' '+esc(t.time)+' - '+esc(t.subject)+'</p>').join('')||'<p class="text-sm text-slate-400">No timetable</p>';
-document.getElementById('reportsList').innerHTML=DB.reports.map(r=>'<div class="bg-white rounded-2xl p-4 shadow-sm"><div class="flex justify-between"><p class="font-bold">'+esc(r.title)+'</p><span class="badge '+(r.status==='Approved'?'bg-emerald-100 text-emerald-700':'bg-amber-100 text-amber-700')+'">'+r.status+'</span></div><p class="text-xs text-slate-500">Class '+esc(r.cls)+' • By '+esc(r.by)+'</p><p class="text-sm mt-2">'+esc(r.details)+'</p><div class="flex gap-2 mt-3 flex-wrap">'+(canApprove()&&r.status!=='Approved'?'<button type="button" onclick="approveReport(\''+r.id+'\')" class="bg-emerald-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">Approve</button>':'')+'<button type="button" onclick="printReport(\''+r.id+'\')" class="border px-3 py-1.5 rounded-full text-xs font-bold">Print</button><button type="button" onclick="delReport(\''+r.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyReports').style.display=DB.reports.length?'none':'block';
-document.getElementById('hwList').innerHTML=DB.homework.map(h=>'<div class="bg-white rounded-2xl p-4 shadow-sm"><p class="font-bold">'+esc(h.title)+'</p><p class="text-xs text-slate-500">Class '+esc(h.cls)+' • By '+esc(h.by)+'</p><p class="text-sm mt-2">'+esc(h.instructions)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="submitHW(\''+h.id+'\')" class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">Submit HW</button><button type="button" onclick="delHW(\''+h.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyHW').style.display=DB.homework.length?'none':'block';
-document.getElementById('hwSubList').innerHTML=DB.hwSubs.map(s=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">'+esc(s.student)+' • HW: '+esc(s.hwTitle)+'</p><p class="text-sm mt-1">'+esc(s.text)+'</p><p class="text-xs text-slate-500">'+esc(s.date)+' • '+s.status+'</p>'+(canApprove()?'<button type="button" onclick="checkHW(\''+s.id+'\')" class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold mt-2">Mark Checked</button>':'')+'</div>').join('');
-document.getElementById('quizList').innerHTML=DB.quizzes.map(qz=>'<div class="bg-white rounded-2xl p-4 shadow-sm"><p class="font-bold">📝 '+esc(qz.title)+' • Class '+esc(qz.cls)+' • '+qz.questions.length+' Qs</p><p class="text-xs text-slate-500">By '+esc(qz.by)+'</p><p class="text-sm mt-1">'+esc(qz.desc||'')+'</p><div class="flex gap-2 mt-3"><button type="button" onclick="attemptQuiz(\''+qz.id+'\')" class="bg-blue-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">Attempt Quiz</button><button type="button" onclick="delQuiz(\''+qz.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyQuiz').style.display=DB.quizzes.length?'none':'block';
-document.getElementById('quizAttempts').innerHTML=DB.quizAttempts.map(a=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">'+esc(a.quizTitle)+' • '+esc(a.by)+' • Score '+a.score+'/'+a.total+' • Grade '+gradeFromMarks(a.score/a.total*100)+'</p><p class="text-xs text-slate-500">'+esc(a.date)+'</p></div>').join('');
-document.getElementById('feesList').innerHTML=DB.fees.map(f=>{ let s=DB.students.find(x=>x.id===f.studentId); return '<div class="bg-white rounded-2xl p-4"><div class="flex justify-between"><p class="font-bold">'+esc(s?s.name:'Unknown')+' • Class '+esc(s?s.cls:'-')+'</p><span class="badge '+(f.status==='Paid'?'bg-emerald-100 text-emerald-700':'bg-red-100 text-red-700')+'">'+f.status+'</span></div><p class="text-sm mt-1">Rs '+f.amount+' • '+esc(f.month)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="toggleFee(\''+f.id+'\')" class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">'+(f.status==='Paid'?'Mark Unpaid':'Mark Paid')+'</button><button type="button" onclick="printReceipt(\''+f.id+'\')" class="border px-3 py-1 rounded-full text-xs font-bold">Receipt</button><button type="button" onclick="delFee(\''+f.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>'; }).join(''); document.getElementById('emptyFees').style.display=DB.fees.length?'none':'block';
-document.getElementById('resultsList').innerHTML=DB.results.map(r=>{ let s=DB.students.find(x=>x.id===r.studentId); return '<div class="bg-white rounded-2xl p-4"><p class="font-bold">'+esc(s?s.name:'Unknown')+' • '+esc(r.subject)+' • '+r.marks+'/100 • '+gradeFromMarks(r.marks)+'</p><p class="text-xs text-slate-500">Class '+esc(r.cls)+' • By '+esc(r.by)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="printResult(\''+r.id+'\')" class="border px-3 py-1 rounded-full text-xs font-bold">Report Card</button><button type="button" onclick="delResult(\''+r.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>'; }).join(''); document.getElementById('emptyResults').style.display=DB.results.length?'none':'block';
-document.getElementById('salaryList').innerHTML=DB.salary.map(s=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">💰 '+esc(s.teacher)+' • Rs '+s.amount+' • '+esc(s.month)+'</p><p class="text-xs text-slate-500">Status: '+s.status+' • By '+esc(s.by)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="toggleSalary(\''+s.id+'\')" class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">Toggle Paid</button><button type="button" onclick="delSalary(\''+s.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptySalary').style.display=DB.salary.length?'none':'block';
-document.getElementById('ttList').innerHTML=DB.timetable.map(t=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold text-sm">'+esc(t.day)+' • '+esc(t.time)+'</p><p class="text-sm mt-1">Class '+esc(t.cls)+' - '+esc(t.subject)+' • '+esc(t.teacher||t.by)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="editTT(\''+t.id+'\')" class="border px-3 py-1 rounded-full text-xs font-bold">Edit</button><button type="button" onclick="delTT(\''+t.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyTT').style.display=DB.timetable.length?'none':'block';
-document.getElementById('leaveList').innerHTML=DB.leaves.map(l=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">'+esc(l.by)+' • '+esc(l.type)+' • '+esc(l.from)+' to '+esc(l.to)+'</p><p class="text-sm mt-1">'+esc(l.reason)+'</p><p class="mt-2"><span class="badge '+(l.status==='Approved'?'bg-emerald-100 text-emerald-700':l.status==='Rejected'?'bg-red-100 text-red-700':'bg-amber-100 text-amber-700')+'">'+l.status+'</span></p>'+(canApprove()&&l.status==='Pending'?'<div class="flex gap-2 mt-2"><button type="button" onclick="setLeave(\''+l.id+'\',\'Approved\')" class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold">Approve</button><button type="button" onclick="setLeave(\''+l.id+'\',\'Rejected\')" class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">Reject</button></div>':'')+'</div>').join(''); document.getElementById('emptyLeave').style.display=DB.leaves.length?'none':'block';
-document.getElementById('meetingsList').innerHTML=DB.meetings.map(m=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">'+esc(m.title)+'</p><p class="text-xs text-slate-500">'+esc(m.datetime)+' • By '+esc(m.by)+'</p><p class="text-sm mt-2">'+esc(m.agenda)+'</p>'+(canApprove()?'<button type="button" onclick="delMeeting(\''+m.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button>':'')+'</div>').join(''); document.getElementById('emptyMeetings').style.display=DB.meetings.length?'none':'block';
-document.getElementById('noticesList').innerHTML=DB.notices.map(n=>'<div class="bg-white rounded-2xl p-4 border-l-4 '+(n.priority==='High'?'border-red-500':'border-blue-500')+'"><p class="font-bold">'+esc(n.title)+' <span class="badge bg-blue-50 text-blue-700">'+esc(n.priority)+'</span></p><p class="text-xs text-slate-500">'+esc(n.date)+' • By '+esc(n.by)+'</p><p class="text-sm mt-2">'+esc(n.text)+'</p><button type="button" onclick="delNotice(\''+n.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyNotices').style.display=DB.notices.length?'none':'block';
-document.getElementById('recentNotices').innerHTML=DB.notices.slice(-3).reverse().map(n=>'<div class="bg-slate-50 rounded-xl p-3"><p class="font-bold text-sm">'+esc(n.title)+'</p><p class="text-xs text-slate-500">'+esc(n.text).slice(0,80)+'</p></div>').join(''); document.getElementById('emptyRecentNotices').style.display=DB.notices.length?'none':'block';
-document.getElementById('eventsList').innerHTML=DB.events.map(e=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📅 '+esc(e.title)+' • '+esc(e.date)+'</p><p class="text-sm mt-1">'+esc(e.desc)+'</p><p class="text-xs text-slate-500">By '+esc(e.by)+'</p><button type="button" onclick="delEvent(\''+e.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyEvents').style.display=DB.events.length?'none':'block';
-document.getElementById('recentEvents').innerHTML=DB.events.slice(-3).reverse().map(e=>'<div class="bg-slate-50 rounded-xl p-3"><p class="font-bold text-sm">'+esc(e.title)+' • '+esc(e.date)+'</p><p class="text-xs text-slate-500">'+esc(e.desc).slice(0,80)+'</p></div>').join(''); document.getElementById('emptyRecentEvents').style.display=DB.events.length?'none':'block';
-document.getElementById('booksList').innerHTML=DB.books.map(b=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📖 '+esc(b.title)+'</p><p class="text-xs text-slate-500">'+esc(b.author)+' • '+esc(b.status)+'</p><p class="text-sm mt-1">Issued To: '+esc(b.issuedTo||'Available')+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="toggleBook(\''+b.id+'\')" class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">'+(b.status==='Available'?'Issue':'Return')+'</button><button type="button" onclick="delBook(\''+b.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyBooks').style.display=DB.books.length?'none':'block';
-document.getElementById('inventoryList').innerHTML=DB.inventory.map(it=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📦 '+esc(it.name)+' • Qty '+it.qty+' • '+esc(it.category)+'</p><p class="text-xs text-slate-500">Condition: '+esc(it.condition)+' • Rs '+(it.price||0)+'</p><div class="flex gap-2 mt-2"><button type="button" onclick="adjustStock(\''+it.id+'\',1)" class="bg-emerald-600 text-white px-2 py-1 rounded-full text-xs">+1</button><button type="button" onclick="adjustStock(\''+it.id+'\',-1)" class="bg-amber-500 text-white px-2 py-1 rounded-full text-xs">-1</button><button type="button" onclick="delInventory(\''+it.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyInventory').style.display=DB.inventory.length?'none':'block';
-document.getElementById('transportList').innerHTML=DB.transport.map(t=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">🚌 '+esc(t.route)+' • Driver '+esc(t.driver)+' • Van '+esc(t.van)+'</p><p class="text-sm mt-1">Fee Rs '+t.fee+' • Time '+esc(t.time)+' • Students '+esc(t.students||'')+'</p><button type="button" onclick="delTransport(\''+t.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyTransport').style.display=DB.transport.length?'none':'block';
-document.getElementById('complaintsList').innerHTML=DB.complaints.map(c=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📩 '+esc(c.title)+' • '+esc(c.by)+' • <span class="badge '+(c.status==='Solved'?'bg-emerald-100 text-emerald-700':'bg-amber-100 text-amber-700')+'">'+c.status+'</span></p><p class="text-sm mt-1">'+esc(c.text)+'</p>'+(canApprove()?'<button type="button" onclick="solveComplaint(\''+c.id+'\')" class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold mt-2">Mark Solved</button>':'')+'</div>').join(''); document.getElementById('emptyComplaints').style.display=DB.complaints.length?'none':'block';
-document.getElementById('chatBox').innerHTML=DB.chats.map(c=>'<div class="flex gap-2"><div class="w-8 h-8 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-xs font-bold shrink-0">'+esc(c.name[0])+'</div><div><p class="text-xs font-bold">'+esc(c.name)+' <span class="bg-slate-100 px-1.5 py-0.5 rounded-full text-[10px]">'+esc(c.role)+'</span> <span class="text-slate-400">'+esc(c.time)+'</span></p><p class="text-sm bg-slate-50 rounded-2xl rounded-tl-none px-3 py-2 mt-1 inline-block">'+esc(c.msg)+'</p></div></div>').join(''); document.getElementById('emptyChat').style.display=DB.chats.length?'none':'block';
-document.getElementById('admissionsList').innerHTML=DB.admissions.map(a=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📝 '+esc(a.childName)+' • Class '+esc(a.cls)+' • Father '+esc(a.father)+'</p><p class="text-xs text-slate-500">Phone '+esc(a.phone)+' • Status '+a.status+'</p><p class="text-sm mt-1">'+esc(a.note||'')+'</p><div class="flex gap-2 mt-2">'+(canApprove()?'<button type="button" onclick="setAdmission(\''+a.id+'\',\'Approved\')" class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold">Approve</button><button type="button" onclick="setAdmission(\''+a.id+'\',\'Rejected\')" class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">Reject</button>':'')+'<button type="button" onclick="delAdmission(\''+a.id+'\')" class="text-red-500 text-xs font-bold">Delete</button></div></div>').join(''); document.getElementById('emptyAdmissions').style.display=DB.admissions.length?'none':'block';
-document.getElementById('disciplineList').innerHTML=DB.discipline.map(d=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">⚖️ '+esc(d.student)+' • '+esc(d.type)+'</p><p class="text-sm mt-1">'+esc(d.details)+'</p><p class="text-xs text-slate-500">'+esc(d.date)+' • By '+esc(d.by)+'</p><button type="button" onclick="delDiscipline(\''+d.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyDiscipline').style.display=DB.discipline.length?'none':'block';
-document.getElementById('healthList').innerHTML=DB.health.map(h=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">🏥 '+esc(h.student)+' • Height '+esc(h.height)+' • Weight '+esc(h.weight)+'</p><p class="text-sm mt-1">Vaccination: '+esc(h.vaccine)+' • Note: '+esc(h.note)+'</p><p class="text-xs text-slate-500">'+esc(h.date)+'</p><button type="button" onclick="delHealth(\''+h.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyHealth').style.display=DB.health.length?'none':'block';
-document.getElementById('alumniList').innerHTML=DB.alumni.map(a=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">🎓 '+esc(a.name)+' • Passed Year '+esc(a.year)+' • Class '+esc(a.cls)+'</p><p class="text-sm mt-1">Now: '+esc(a.currentStatus)+'</p><button type="button" onclick="delAlumni(\''+a.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyAlumni').style.display=DB.alumni.length?'none':'block';
-document.getElementById('examScheduleList').innerHTML=DB.examSchedule.map(e=>'<div class="bg-white rounded-2xl p-4"><p class="font-bold">📅 '+esc(e.exam)+' • '+esc(e.subject)+' • Class '+esc(e.cls)+'</p><p class="text-sm mt-1">Date: '+esc(e.date)+' • Time: '+esc(e.time)+' • Room: '+esc(e.room)+'</p><button type="button" onclick="delExamSchedule(\''+e.id+'\')" class="text-red-500 text-xs mt-2 font-bold">Delete</button></div>').join(''); document.getElementById('emptyExamSchedule').style.display=DB.examSchedule.length?'none':'block';
-let sq=(document.getElementById('staffSearch')?.value||'').toLowerCase(); let rf=document.getElementById('staffRoleFilter')?.value||'';
-let fstaff=DB.users.filter(u=>(!sq||u.name.toLowerCase().includes(sq)||u.email.toLowerCase().includes(sq))&&(!rf||u.role===rf));
-if(isAdmin()){ document.getElementById('staffList').innerHTML=fstaff.map(u=>'<div class="bg-white rounded-2xl p-4 '+(u.role==='New User'?'border-2 border-amber-300':'')+'"><div class="flex justify-between"><p class="font-bold">'+esc(u.name)+' '+(u.email===ADMIN_EMAIL?'<span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">OWNER</span>':u.role==='New User'?'<span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">⏳ NEW - ASSIGN ROLE</span>':'')+'</p><span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full font-bold">'+u.role+'</span></div><p class="text-xs text-slate-500 mt-1">'+esc(u.email)+' • '+esc(u.subject)+' • '+esc(u.phone||'')+'</p><div class="flex gap-2 mt-3 flex-wrap items-center"><label class="text-xs font-bold">Change Role →</label><select onchange="changeRole(\''+u.id+'\',this.value)" '+(u.email===ADMIN_EMAIL?'disabled':'')+' class="border-2 border-blue-200 rounded-full px-3 py-1.5 text-sm font-bold bg-blue-50"><option '+(u.role==='New User'?'selected':'')+'>New User</option><option '+(u.role==='Teacher'?'selected':'')+'>Teacher</option><option '+(u.role==='Head Teacher'?'selected':'')+'>Head Teacher</option><option '+(u.role==='Admin'?'selected':'')+'>Admin</option><option '+(u.role==='Parent'?'selected':'')+'>Parent</option><option '+(u.role==='Student'?'selected':'')+'>Student</option></select>'+(u.email!==ADMIN_EMAIL?'<button type="button" onclick="delUser(\''+u.id+'\')" class="text-red-500 text-xs font-bold">Delete</button><button type="button" onclick="resetPass(\''+u.id+'\')" class="border px-2 py-1 rounded-full text-xs">Reset Pass</button>':'')+'</div></div>').join(''); }
-drawChart();
-}
-function setAtt(sid,st){ let d=document.getElementById('attDate')?.value||todayStr(); let ex=DB.attendance.find(a=>a.studentId===sid&&a.date===d); if(ex) ex.status=st; else DB.attendance.push({id:uid('att'),studentId:sid,status:st,date:d}); save(); renderAll(); }
-function markAllPresent(){ DB.students.forEach(s=>setAtt(s.id,'Present')); alert('All Present'); }
-function delStudent(id){ if(!confirm('Delete student?')) return; DB.students=DB.students.filter(s=>s.id!==id); DB.attendance=DB.attendance.filter(a=>a.studentId!==id); DB.fees=DB.fees.filter(f=>f.studentId!==id); DB.results=DB.results.filter(r=>r.studentId!==id); save(); renderAll(); }
-function viewStudent(id){ let s=DB.students.find(x=>x.id===id); openGeneric('Student Profile','<div class="space-y-2 text-sm"><p><b>'+esc(s.name)+'</b> • Roll '+esc(s.roll)+' • Class '+esc(s.cls)+'</p><p>Father: '+esc(s.father||'-')+'</p><p>Phone: '+esc(s.phone||'-')+'</p><p>Address: '+esc(s.address||'-')+'</p><p>Admission: '+esc(s.admission||'-')+'</p></div>'); }
-function editStudent(id){ let s=DB.students.find(x=>x.id===id); openGeneric('Edit Student','<div class="space-y-3"><input id="eName" value="'+esc(s.name)+'" class="w-full border rounded-xl px-3 py-2.5"><input id="eFather" value="'+esc(s.father||'')+'" class="w-full border rounded-xl px-3 py-2.5" placeholder="Father"><input id="ePhone" value="'+esc(s.phone||'')+'" class="w-full border rounded-xl px-3 py-2.5" placeholder="Phone"><input id="eAddr" value="'+esc(s.address||'')+'" class="w-full border rounded-xl px-3 py-2.5" placeholder="Address"><button type="button" onclick="saveEditStudent(\''+id+'\')" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save</button></div>'); }
-function saveEditStudent(id){ let s=DB.students.find(x=>x.id===id); s.name=document.getElementById('eName').value; s.father=document.getElementById('eFather').value; s.phone=document.getElementById('ePhone').value; s.address=document.getElementById('eAddr').value; save(); closeGeneric(); renderAll(); }
-function approveReport(id){ let r=DB.reports.find(x=>x.id===id); if(r){ r.status='Approved'; save(); renderAll(); } }
-function delReport(id){ DB.reports=DB.reports.filter(x=>x.id!==id); save(); renderAll(); }
-function delHW(id){ DB.homework=DB.homework.filter(x=>x.id!==id); save(); renderAll(); }
-function submitHW(id){ let h=DB.homework.find(x=>x.id===id); let name=prompt('Your Name:'); if(!name) return; let txt=prompt('Homework Answer / Link:'); if(!txt) return; DB.hwSubs.push({id:uid('sub'),hwId:id,hwTitle:h.title,student:name,text:txt,date:todayStr(),status:'Submitted'}); save(); renderAll(); alert('HW Submitted!'); }
-function checkHW(id){ let s=DB.hwSubs.find(x=>x.id===id); s.status='Checked'; save(); renderAll(); }
-function delQuiz(id){ DB.quizzes=DB.quizzes.filter(x=>x.id!==id); save(); renderAll(); }
-function attemptQuiz(id){ let qz=DB.quizzes.find(x=>x.id===id); let score=0; qz.questions.forEach((qq,idx)=>{ let a=prompt('Q'+(idx+1)+': '+qq.q+'\nOptions: '+qq.options.join(' | ')+'\nType answer:'); if(a&&a.trim().toLowerCase()===qq.answer.toLowerCase()) score++; }); DB.quizAttempts.push({id:uid('qa'),quizTitle:qz.title,by:me().name,score,total:qz.questions.length,date:todayStr()}); save(); renderAll(); alert('Quiz Finished! Score '+score+'/'+qz.questions.length+' Grade '+gradeFromMarks(score/qz.questions.length*100)); }
-function toggleFee(id){ let f=DB.fees.find(x=>x.id===id); f.status=f.status==='Paid'?'Unpaid':'Paid'; save(); renderAll(); }
-function delFee(id){ DB.fees=DB.fees.filter(x=>x.id!==id); save(); renderAll(); }
-function printReceipt(id){ let f=DB.fees.find(x=>x.id===id); let s=DB.students.find(x=>x.id===f.studentId); let w=window.open('','_blank'); w.document.write('<h2>Fee Receipt</h2><p>Student: '+esc(s?s.name:'')+' • Amount Rs '+f.amount+' • Month '+esc(f.month)+' • Status '+f.status+'</p><p>Govt Primary School Dhok Jhatt</p>'); w.print(); }
-function delResult(id){ DB.results=DB.results.filter(x=>x.id!==id); save(); renderAll(); }
-function printResult(id){ let r=DB.results.find(x=>x.id===id); let s=DB.students.find(x=>x.id===r.studentId); let w=window.open('','_blank'); w.document.write('<h2>Report Card</h2><p>Student '+esc(s?s.name:'')+' • Class '+r.cls+' • Subject '+esc(r.subject)+' • Marks '+r.marks+' • Grade '+gradeFromMarks(r.marks)+'</p>'); w.print(); }
-function toggleSalary(id){ let s=DB.salary.find(x=>x.id===id); s.status=s.status==='Paid'?'Pending':'Paid'; save(); renderAll(); }
-function delSalary(id){ DB.salary=DB.salary.filter(x=>x.id!==id); save(); renderAll(); }
-function delTT(id){ DB.timetable=DB.timetable.filter(x=>x.id!==id); save(); renderAll(); }
-function setLeave(id,st){ let l=DB.leaves.find(x=>x.id===id); l.status=st; save(); renderAll(); }
-function delMeeting(id){ DB.meetings=DB.meetings.filter(x=>x.id!==id); save(); renderAll(); }
-function delNotice(id){ DB.notices=DB.notices.filter(x=>x.id!==id); save(); renderAll(); }
-function delEvent(id){ DB.events=DB.events.filter(x=>x.id!==id); save(); renderAll(); }
-function toggleBook(id){ let b=DB.books.find(x=>x.id===id); if(b.status==='Available'){ let n=prompt('Enter student name to issue:'); if(!n) return; b.status='Issued'; b.issuedTo=n; }else{ b.status='Available'; b.issuedTo=''; } save(); renderAll(); }
-function delBook(id){ DB.books=DB.books.filter(x=>x.id!==id); save(); renderAll(); }
-function adjustStock(id,d){ let it=DB.inventory.find(x=>x.id===id); it.qty=Math.max(0,it.qty+d); save(); renderAll(); }
-function delInventory(id){ DB.inventory=DB.inventory.filter(x=>x.id!==id); save(); renderAll(); }
-function delTransport(id){ DB.transport=DB.transport.filter(x=>x.id!==id); save(); renderAll(); }
-function solveComplaint(id){ let c=DB.complaints.find(x=>x.id===id); c.status='Solved'; save(); renderAll(); }
-function sendChat(){ let inp=document.getElementById('chatInput'); if(!inp.value.trim()) return; let u=me(); DB.chats.push({id:uid('chat'),name:u.name,role:u.role,msg:inp.value.trim(),time:new Date().toLocaleString()}); inp.value=''; save(); renderAll(); }
-function delUser(id){ let u=DB.users.find(x=>x.id===id); if(u&&u.email===ADMIN_EMAIL) return alert('Cannot delete System Owner'); if(!confirm('Delete staff?')) return; DB.users=DB.users.filter(x=>x.id!==id); save(); renderAll(); }
-function changeRole(id,role){ let u=DB.users.find(x=>x.id===id); if(u&&u.email===ADMIN_EMAIL) return alert('Cannot change Owner role'); u.role=role; save(); renderAll(); alert('Role updated to '+role); }
-function resetPass(id){ let u=DB.users.find(x=>x.id===id); let p=prompt('Enter new password for '+u.name); if(!p) return; u.password=p; save(); renderAll(); alert('Password reset done'); }
-function printReport(id){ let r=DB.reports.find(x=>x.id===id); let w=window.open('','_blank'); w.document.write('<h2>'+esc(r.title)+'</h2><p>Class '+esc(r.cls)+' • By '+esc(r.by)+'</p><p>'+esc(r.details)+'</p>'); w.print(); }
-function printCertificate(){ let sid=document.getElementById('certStudent').value; if(!sid) return alert('Select student'); let s=DB.students.find(x=>x.id===sid); let type=document.getElementById('certType').value; let w=window.open('','_blank'); w.document.write('<div style="text-align:center;border:3px solid #2563eb;padding:30px"><h1>'+type+'</h1><p>This is to certify that <b>'+esc(s.name)+'</b> • Roll '+s.roll+' • Class '+s.cls+' is a student of Govt Primary School Dhok Jhatt.</p><p>Principal Signature</p></div>'); w.print(); }
-function printIDCard(){ let sid=document.getElementById('idStudent').value; if(!sid) return alert('Select student'); let s=DB.students.find(x=>x.id===sid); let w=window.open('','_blank'); w.document.write('<div style="width:320px;border:2px solid #2563eb;padding:16px;text-align:center"><h2>GPS Dhok Jhatt</h2><p><b>'+esc(s.name)+'</b></p><p>Roll '+s.roll+' • Class '+s.cls+'</p><p>Father '+esc(s.father||'')+'</p><p>ID CARD</p></div>'); w.print(); }
-function exportStudentsCSV(){ let csv='Name,Roll,Class,Father,Phone\n'+DB.students.map(s=>s.name+','+s.roll+','+s.cls+','+(s.father||'')+','+(s.phone||'')).join('\n'); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv])); a.download='students.csv'; a.click(); }
-function exportAttendanceCSV(){ let csv='Student,Date,Status\n'+DB.attendance.map(a=>{ let s=DB.students.find(x=>x.id===a.studentId); return (s?s.name:'')+','+a.date+','+a.status; }).join('\n'); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv])); a.download='attendance.csv'; a.click(); }
-function setAdmission(id,st){ let a=DB.admissions.find(x=>x.id===id); a.status=st; if(st==='Approved'){ let exists=DB.students.find(s=>s.name===a.childName); if(!exists) DB.students.push({id:uid('stu'),roll:String(DB.students.length+1),name:a.childName,cls:a.cls,father:a.father,phone:a.phone,address:'Dhok Jhatt',section:'A',admission:todayStr()}); } save(); renderAll(); }
-function delAdmission(id){ DB.admissions=DB.admissions.filter(x=>x.id!==id); save(); renderAll(); }
-function delDiscipline(id){ DB.discipline=DB.discipline.filter(x=>x.id!==id); save(); renderAll(); }
-function delHealth(id){ DB.health=DB.health.filter(x=>x.id!==id); save(); renderAll(); }
-function delAlumni(id){ DB.alumni=DB.alumni.filter(x=>x.id!==id); save(); renderAll(); }
-function delExamSchedule(id){ DB.examSchedule=DB.examSchedule.filter(x=>x.id!==id); save(); renderAll(); }
-function openGeneric(t,h){ document.getElementById('genericTitle').innerText=t; document.getElementById('genericBody').innerHTML=h; document.getElementById('genericModal').classList.add('open'); }
-function closeGeneric(){ document.getElementById('genericModal').classList.remove('open'); }
-function openStudentModal(){ openGeneric('Add New Student','<div class="space-y-3"><input id="sRoll" class="w-full border rounded-xl px-3 py-2.5" placeholder="Roll No"><input id="sName" class="w-full border rounded-xl px-3 py-2.5" placeholder="Full Name"><select id="sClass" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><input id="sFather" class="w-full border rounded-xl px-3 py-2.5" placeholder="Father Name"><input id="sPhone" class="w-full border rounded-xl px-3 py-2.5" placeholder="Phone"><input id="sAddress" class="w-full border rounded-xl px-3 py-2.5" placeholder="Address"><button type="button" onclick="saveStudent()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Add Student</button></div>'); }
-function saveStudent(){ let r=document.getElementById('sRoll').value.trim(), n=document.getElementById('sName').value.trim(), c=document.getElementById('sClass').value; if(!r||!n) return alert('Fill all'); DB.students.push({id:uid('stu'),roll:r,name:n,cls:c,father:document.getElementById('sFather').value,phone:document.getElementById('sPhone').value,address:document.getElementById('sAddress').value,section:'A',admission:todayStr()}); save(); closeGeneric(); renderAll(); }
-function openReportModal(){ openGeneric('New Report','<div class="space-y-3"><input id="rTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Title"><select id="rClass" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><textarea id="rDetails" class="w-full border rounded-xl px-3 py-2.5" rows="3" placeholder="Details & Grades"></textarea><button type="button" onclick="saveReport()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Submit Report</button></div>'); }
-function saveReport(){ let t=document.getElementById('rTitle').value.trim(), c=document.getElementById('rClass').value, d=document.getElementById('rDetails').value.trim(); if(!t||!d) return alert('Fill all'); DB.reports.push({id:uid('rep'),title:t,cls:c,details:d,by:me().name,status:'Pending'}); save(); closeGeneric(); renderAll(); }
-function openHWModal(){ openGeneric('Publish Worksheet','<div class="space-y-3"><input id="hTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Title"><select id="hClass" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><textarea id="hInst" class="w-full border rounded-xl px-3 py-2.5" rows="3" placeholder="Instructions"></textarea><input id="hLink" class="w-full border rounded-xl px-3 py-2.5" placeholder="Link (optional)"><button type="button" onclick="saveHW()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Publish</button></div>'); }
-function saveHW(){ let t=document.getElementById('hTitle').value.trim(); if(!t) return alert('Title required'); DB.homework.push({id:uid('hw'),title:t,cls:document.getElementById('hClass').value,instructions:document.getElementById('hInst').value,link:document.getElementById('hLink').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openQuizModal(){ openGeneric('Create Quiz','<div class="space-y-3"><input id="qTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Quiz Title"><select id="qClass" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><input id="q1" class="w-full border rounded-xl px-3 py-2.5" placeholder="Q1: 2+2=?"><input id="q1a" class="w-full border rounded-xl px-3 py-2.5" placeholder="Correct Answer Q1 e.g. 4"><input id="q2" class="w-full border rounded-xl px-3 py-2.5" placeholder="Q2: Capital of Pakistan?"><input id="q2a" class="w-full border rounded-xl px-3 py-2.5" placeholder="Correct Answer Q2 e.g. Islamabad"><button type="button" onclick="saveQuiz()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Create Quiz</button></div>'); }
-function saveQuiz(){ let t=document.getElementById('qTitle').value.trim(); if(!t) return alert('Title required'); let qs=[]; if(document.getElementById('q1').value) qs.push({q:document.getElementById('q1').value,options:['See Question'],answer:document.getElementById('q1a').value}); if(document.getElementById('q2').value) qs.push({q:document.getElementById('q2').value,options:['See Question'],answer:document.getElementById('q2a').value}); DB.quizzes.push({id:uid('quiz'),title:t,cls:document.getElementById('qClass').value,desc:'Quiz',by:me().name,questions:qs.length?qs:[{q:'Sample',options:['A'],answer:'A'}]}); save(); closeGeneric(); renderAll(); }
-function openFeeModal(){ openGeneric('Add Fee','<div class="space-y-3"><select id="fStudent" class="w-full border rounded-xl px-3 py-2.5">'+DB.students.map(s=>'<option value="'+s.id+'">'+esc(s.name)+' - Class '+s.cls+'</option>').join('')+'</select><input id="fAmount" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Amount Rs"><input id="fMonth" class="w-full border rounded-xl px-3 py-2.5" placeholder="Month e.g. November 2026"><select id="fStatus" class="w-full border rounded-xl px-3 py-2.5"><option>Paid</option><option>Unpaid</option></select><button type="button" onclick="saveFee()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Fee</button></div>'); }
-function saveFee(){ let sid=document.getElementById('fStudent').value; DB.fees.push({id:uid('fee'),studentId:sid,amount:document.getElementById('fAmount').value,month:document.getElementById('fMonth').value,status:document.getElementById('fStatus').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openResultModal(){ openGeneric('Add Result','<div class="space-y-3"><select id="rStudent" class="w-full border rounded-xl px-3 py-2.5">'+DB.students.map(s=>'<option value="'+s.id+'">'+esc(s.name)+'</option>').join('')+'</select><input id="rSubject" class="w-full border rounded-xl px-3 py-2.5" placeholder="Subject"><input id="rMarks" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Marks / 100"><select id="rCls" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><button type="button" onclick="saveResult()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Result</button></div>'); }
-function saveResult(){ let sid=document.getElementById('rStudent').value; DB.results.push({id:uid('res'),studentId:sid,subject:document.getElementById('rSubject').value,marks:document.getElementById('rMarks').value,cls:document.getElementById('rCls').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openSalaryModal(){ openGeneric('Add Salary','<div class="space-y-3"><input id="salTeacher" class="w-full border rounded-xl px-3 py-2.5" placeholder="Teacher Name"><input id="salAmount" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Amount Rs"><input id="salMonth" class="w-full border rounded-xl px-3 py-2.5" placeholder="Month"><select id="salStatus" class="w-full border rounded-xl px-3 py-2.5"><option>Paid</option><option>Pending</option></select><button type="button" onclick="saveSalary()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Salary</button></div>'); }
-function saveSalary(){ DB.salary.push({id:uid('sal'),teacher:document.getElementById('salTeacher').value,amount:document.getElementById('salAmount').value,month:document.getElementById('salMonth').value,status:document.getElementById('salStatus').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openTimetableModal(eid){ let e=DB.timetable.find(x=>x.id===eid); openGeneric(eid?'Edit Slot':'Add Slot','<div class="space-y-3"><select id="tDay" class="w-full border rounded-xl px-3 py-2.5">'+['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].map(d=>'<option '+(e&&e.day===d?'selected':'')+'>'+d+'</option>').join('')+'</select><select id="tClass" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><input id="tSubj" value="'+(e?esc(e.subject):'')+'" class="w-full border rounded-xl px-3 py-2.5" placeholder="Subject"><input id="tTime" value="'+(e?esc(e.time):'')+'" class="w-full border rounded-xl px-3 py-2.5" placeholder="09:00 - 09:45"><button type="button" onclick="saveTT(\''+(eid||'')+'\')" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save</button></div>'); }
-function editTT(id){ openTimetableModal(id); }
-function saveTT(id){ let d=document.getElementById('tDay').value, c=document.getElementById('tClass').value, s=document.getElementById('tSubj').value.trim(), t=document.getElementById('tTime').value.trim(); if(!s||!t) return alert('Fill all'); if(id){ let e=DB.timetable.find(x=>x.id===id); e.day=d; e.cls=c; e.subject=s; e.time=t; }else DB.timetable.push({id:uid('tt'),day:d,cls:c,subject:s,time:t,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openLeaveModal(){ openGeneric('Request Leave','<div class="space-y-3"><input id="lType" class="w-full border rounded-xl px-3 py-2.5" placeholder="Leave Type e.g. Sick Leave"><input id="lFrom" type="date" class="w-full border rounded-xl px-3 py-2.5"><input id="lTo" type="date" class="w-full border rounded-xl px-3 py-2.5"><textarea id="lReason" class="w-full border rounded-xl px-3 py-2.5" placeholder="Reason"></textarea><button type="button" onclick="saveLeave()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Submit</button></div>'); }
-function saveLeave(){ DB.leaves.push({id:uid('lev'),by:me().name,type:document.getElementById('lType').value,from:document.getElementById('lFrom').value,to:document.getElementById('lTo').value,reason:document.getElementById('lReason').value,status:'Pending'}); save(); closeGeneric(); renderAll(); }
-function openMeetingModal(){ if(!canApprove()) return alert('Only Head Teacher & Admin can schedule'); openGeneric('Schedule Meeting','<div class="space-y-3"><input id="mTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Title"><input id="mDT" type="datetime-local" class="w-full border rounded-xl px-3 py-2.5"><textarea id="mAgenda" class="w-full border rounded-xl px-3 py-2.5" placeholder="Agenda"></textarea><button type="button" onclick="saveMeeting()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Schedule</button></div>'); }
-function saveMeeting(){ DB.meetings.push({id:uid('meet'),title:document.getElementById('mTitle').value,datetime:document.getElementById('mDT').value,agenda:document.getElementById('mAgenda').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openNoticeModal(){ openGeneric('New Notice','<div class="space-y-3"><input id="nTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Title"><select id="nPri" class="w-full border rounded-xl px-3 py-2.5"><option>Normal</option><option>High</option></select><textarea id="nText" class="w-full border rounded-xl px-3 py-2.5" placeholder="Notice Text"></textarea><button type="button" onclick="saveNotice()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Post Notice</button></div>'); }
-function saveNotice(){ DB.notices.push({id:uid('not'),title:document.getElementById('nTitle').value,priority:document.getElementById('nPri').value,text:document.getElementById('nText').value,date:todayStr(),by:me().name}); save(); closeGeneric(); renderAll(); }
-function openEventModal(){ openGeneric('Add Event','<div class="space-y-3"><input id="eTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Event Title"><input id="eDate" type="date" class="w-full border rounded-xl px-3 py-2.5"><textarea id="eDesc" class="w-full border rounded-xl px-3 py-2.5" placeholder="Description"></textarea><button type="button" onclick="saveEvent()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Event</button></div>'); }
-function saveEvent(){ DB.events.push({id:uid('ev'),title:document.getElementById('eTitle').value,date:document.getElementById('eDate').value,desc:document.getElementById('eDesc').value,by:me().name}); save(); closeGeneric(); renderAll(); }
-function openBookModal(){ openGeneric('Add Book','<div class="space-y-3"><input id="bTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Book Title"><input id="bAuthor" class="w-full border rounded-xl px-3 py-2.5" placeholder="Author"><button type="button" onclick="saveBook()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Add Book</button></div>'); }
-function saveBook(){ DB.books.push({id:uid('book'),title:document.getElementById('bTitle').value,author:document.getElementById('bAuthor').value,status:'Available',issuedTo:''}); save(); closeGeneric(); renderAll(); }
-function openInventoryModal(){ openGeneric('Add Inventory','<div class="space-y-3"><input id="iName" class="w-full border rounded-xl px-3 py-2.5" placeholder="Item Name"><input id="iQty" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Quantity"><input id="iCat" class="w-full border rounded-xl px-3 py-2.5" placeholder="Category"><input id="iPrice" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Price Rs"><button type="button" onclick="saveInventory()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Item</button></div>'); }
-function saveInventory(){ DB.inventory.push({id:uid('inv'),name:document.getElementById('iName').value,qty:Number(document.getElementById('iQty').value||0),category:document.getElementById('iCat').value,condition:'Good',price:document.getElementById('iPrice').value}); save(); closeGeneric(); renderAll(); }
-function openTransportModal(){ openGeneric('Add Route','<div class="space-y-3"><input id="trRoute" class="w-full border rounded-xl px-3 py-2.5" placeholder="Route Name"><input id="trDriver" class="w-full border rounded-xl px-3 py-2.5" placeholder="Driver Name"><input id="trVan" class="w-full border rounded-xl px-3 py-2.5" placeholder="Van No"><input id="trFee" type="number" class="w-full border rounded-xl px-3 py-2.5" placeholder="Fee Rs"><input id="trTime" class="w-full border rounded-xl px-3 py-2.5" placeholder="Time"><button type="button" onclick="saveTransport()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Route</button></div>'); }
-function saveTransport(){ DB.transport.push({id:uid('tr'),route:document.getElementById('trRoute').value,driver:document.getElementById('trDriver').value,van:document.getElementById('trVan').value,fee:document.getElementById('trFee').value,time:document.getElementById('trTime').value,students:''}); save(); closeGeneric(); renderAll(); }
-function openComplaintModal(){ openGeneric('New Complaint','<div class="space-y-3"><input id="cTitle" class="w-full border rounded-xl px-3 py-2.5" placeholder="Title"><textarea id="cText" class="w-full border rounded-xl px-3 py-2.5" placeholder="Complaint Details"></textarea><button type="button" onclick="saveComplaint()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Submit Complaint</button></div>'); }
-function saveComplaint(){ DB.complaints.push({id:uid('comp'),title:document.getElementById('cTitle').value,text:document.getElementById('cText').value,by:me().name,status:'Pending'}); save(); closeGeneric(); renderAll(); }
-function openAddStaffModal(){ if(!isAdmin()) return; openGeneric('Add Staff Manually','<div class="space-y-3"><input id="stName" class="w-full border rounded-xl px-3 py-2.5" placeholder="Full Name"><input id="stEmail" class="w-full border rounded-xl px-3 py-2.5" placeholder="Email"><input id="stPass" class="w-full border rounded-xl px-3 py-2.5" placeholder="Password"><input id="stSubj" class="w-full border rounded-xl px-3 py-2.5" placeholder="Subject"><select id="stRole" class="w-full border rounded-xl px-3 py-2.5"><option>Teacher</option><option>Head Teacher</option><option>Admin</option><option>Parent</option><option>Student</option></select><button type="button" onclick="saveStaff()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Add Staff</button></div>'); }
-function saveStaff(){ let n=document.getElementById('stName').value.trim(), e=document.getElementById('stEmail').value.trim().toLowerCase(), p=document.getElementById('stPass').value; if(!n||!e||!p) return alert('Fill all'); if(DB.users.find(x=>x.email===e)) return alert('Email exists'); DB.users.push({id:uid('usr'),name:n,email:e,password:p,role:document.getElementById('stRole').value,subject:document.getElementById('stSubj').value,phone:''}); save(); closeGeneric(); renderAll(); }
-function openAdmissionModal(){ openGeneric('New Admission','<div class="space-y-3"><input id="aChild" class="w-full border rounded-xl px-3 py-2.5" placeholder="Child Name"><input id="aFather" class="w-full border rounded-xl px-3 py-2.5" placeholder="Father Name"><input id="aPhone" class="w-full border rounded-xl px-3 py-2.5" placeholder="Phone"><select id="aCls" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><textarea id="aNote" class="w-full border rounded-xl px-3 py-2.5" placeholder="Note"></textarea><button type="button" onclick="saveAdmission()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Submit Admission</button></div>'); }
-function saveAdmission(){ DB.admissions.push({id:uid('adm'),childName:document.getElementById('aChild').value,father:document.getElementById('aFather').value,phone:document.getElementById('aPhone').value,cls:document.getElementById('aCls').value,note:document.getElementById('aNote').value,status:'Pending'}); save(); closeGeneric(); renderAll(); }
-function openDisciplineModal(){ openGeneric('Add Discipline Record','<div class="space-y-3"><input id="dStudent" class="w-full border rounded-xl px-3 py-2.5" placeholder="Student Name"><select id="dType" class="w-full border rounded-xl px-3 py-2.5"><option>Good Behaviour</option><option>Warning</option><option>Incident</option></select><textarea id="dDetails" class="w-full border rounded-xl px-3 py-2.**Continuation — isko pichle code ke end me jod do, jahan ruka tha:**
-
-```html
-2.5" placeholder="Details"></textarea><button type="button" onclick="saveDiscipline()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Record</button></div>'); }
-function saveDiscipline(){ DB.discipline.push({id:uid('dis'),student:document.getElementById('dStudent').value,type:document.getElementById('dType').value,details:document.getElementById('dDetails').value,date:todayStr(),by:me().name}); save(); closeGeneric(); renderAll(); }
-function openHealthModal(){ openGeneric('Add Health Record','<div class="space-y-3"><input id="hStudent" class="w-full border rounded-xl px-3 py-2.5" placeholder="Student Name"><input id="hHeight" class="w-full border rounded-xl px-3 py-2.5" placeholder="Height e.g. 3.5 ft"><input id="hWeight" class="w-full border rounded-xl px-3 py-2.5" placeholder="Weight e.g. 18 kg"><input id="hVaccine" class="w-full border rounded-xl px-3 py-2.5" placeholder="Vaccination Status"><textarea id="hNote" class="w-full border rounded-xl px-3 py-2.5" placeholder="Medical Note"></textarea><button type="button" onclick="saveHealth()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Health Record</button></div>'); }
-function saveHealth(){ DB.health.push({id:uid('hea'),student:document.getElementById('hStudent').value,height:document.getElementById('hHeight').value,weight:document.getElementById('hWeight').value,vaccine:document.getElementById('hVaccine').value,note:document.getElementById('hNote').value,date:todayStr()}); save(); closeGeneric(); renderAll(); }
-function openAlumniModal(){ openGeneric('Add Alumni','<div class="space-y-3"><input id="alName" class="w-full border rounded-xl px-3 py-2.5" placeholder="Alumni Name"><input id="alYear" class="w-full border rounded-xl px-3 py-2.5" placeholder="Passing Year"><input id="alCls" class="w-full border rounded-xl px-3 py-2.5" placeholder="Last Class"><input id="alStatus" class="w-full border rounded-xl px-3 py-2.5" placeholder="Now Studying / Working Where"><button type="button" onclick="saveAlumni()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Alumni</button></div>'); }
-function saveAlumni(){ DB.alumni.push({id:uid('alu'),name:document.getElementById('alName').value,year:document.getElementById('alYear').value,cls:document.getElementById('alCls').value,currentStatus:document.getElementById('alStatus').value}); save(); closeGeneric(); renderAll(); }
-function openExamScheduleModal(){ openGeneric('Add Exam Schedule','<div class="space-y-3"><input id="esExam" class="w-full border rounded-xl px-3 py-2.5" placeholder="Exam Name e.g. Mid Term"><input id="esSubject" class="w-full border rounded-xl px-3 py-2.5" placeholder="Subject"><select id="esCls" class="w-full border rounded-xl px-3 py-2.5"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><input id="esDate" type="date" class="w-full border rounded-xl px-3 py-2.5"><input id="esTime" class="w-full border rounded-xl px-3 py-2.5" placeholder="Time e.g. 09:00 - 11:00"><input id="esRoom" class="w-full border rounded-xl px-3 py-2.5" placeholder="Room"><button type="button" onclick="saveExamSchedule()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Save Schedule</button></div>'); }
-function saveExamSchedule(){ DB.examSchedule.push({id:uid('es'),exam:document.getElementById('esExam').value,subject:document.getElementById('esSubject').value,cls:document.getElementById('esCls').value,date:document.getElementById('esDate').value,time:document.getElementById('esTime').value,room:document.getElementById('esRoom').value}); save(); closeGeneric(); renderAll(); }
-function openProfile(){ let u=me(); document.getElementById('pName').value=u.name; document.getElementById('pSubject').value=u.subject; document.getElementById('pPhone').value=u.phone||''; document.getElementById('pPass').value=u.password; document.getElementById('pEmail').value=u.email; document.getElementById('pRole').value=u.role; document.getElementById('profileModal').classList.add('open'); }
-function closeProfile(){ document.getElementById('profileModal').classList.remove('open'); }
-function saveProfile(){ let u=me(); u.name=document.getElementById('pName').value.trim()||u.name; u.subject=document.getElementById('pSubject').value; u.phone=document.getElementById('pPhone').value; u.password=document.getElementById('pPass').value||u.password; save(); closeProfile(); renderApp(); alert('Profile saved'); }
-function exportDB(){ let blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='TEACHERHUB_BACKUP_'+new Date().toISOString().slice(0,10)+'.json'; a.click(); }
-function importDB(ev){ let f=ev.target.files[0]; if(!f) return; let r=new FileReader(); r.onload=()=>{ try{ let d=JSON.parse(r.result); if(!d.users) throw new Error('Invalid'); DB=d; save(); alert('Backup Restored!'); location.reload(); }catch(e){ alert('Invalid backup file'); } }; r.readAsText(f); }
-function hardReset(){ if(!isAdmin()) return alert('Admin only'); if(!confirm('Hard Reset will delete ALL data except Admin. Continue?')) return; DB=seed(); save(); location.reload(); }
-document.getElementById('chatInput')?.addEventListener('keydown',e=>{ if(e.key==='Enter') sendChat(); });
-load(); renderAll(); if(DB.currentUser){ renderApp(); } else { document.getElementById('landing').classList.remove('hidden'); }
+let menu=[
+{id:1,name:"Chicken Tikka Pizza",cat:"pizza",price:999,old:1299,rating:"4.9",time:"25 min",tag:"Bestseller",veg:"spicy",img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500",desc:"Tikka chunks, mozzarella, onion, capsicum, special Emaan sauce."},
+{id:2,name:"Chicken Fajita Pizza",cat:"pizza",price:1099,old:1399,rating:"4.8",time:"25 min",tag:"Popular",veg:"spicy",img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500",desc:"Fajita chicken, capsicum, mushroom, cheese burst."},
+{id:3,name:"Emaan Special Pizza",cat:"pizza",price:1299,old:1699,rating:"5.0",time:"28 min",tag:"Special",veg:"spicy",img:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500",desc:"Double cheese, double chicken, tikka + fajita, jalapeno."},
+{id:4,name:"Cheese Lovers Pizza",cat:"pizza",price:899,old:1099,rating:"4.7",time:"22 min",tag:"Cheesy",veg:"veg",img:"https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500",desc:"Triple cheese, mozzarella, cheddar, extra cheese pull."},
+{id:5,name:"Chicken BBQ Pizza",cat:"pizza",price:1149,old:1449,rating:"4.8",time:"25 min",tag:"BBQ",veg:"spicy",img:"https://images.unsplash.com/photo-1595855759920-86582396756a?w=500",desc:"Smoky BBQ chicken, BBQ sauce, onion, cheese."},
+{id:6,name:"Vegetable Pizza",cat:"pizza",price:799,old:999,rating:"4.6",time:"20 min",tag:"Veg",veg:"veg",img:"https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=500",desc:"Capsicum, onion, mushroom, sweet corn, tomato."},
+{id:7,name:"Chicken Supreme Pizza",cat:"pizza",price:1199,old:1499,rating:"4.9",time:"26 min",tag:"Supreme",veg:"spicy",img:"https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500",desc:"Chicken, olives, mushroom, capsicum, double cheese."},
+{id:8,name:"Pepperoni Pizza",cat:"pizza",price:1399,old:1699,rating:"4.8",time:"26 min",tag:"Premium",veg:"spicy",img:"https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500",desc:"Premium pepperoni, mozzarella, oregano, special sauce."},
+{id:9,name:"Zinger Burger",cat:"burger",price:450,old:550,rating:"4.8",time:"12 min",tag:"Hot",veg:"spicy",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500",desc:"Crispy zinger fillet, cheese, mayo, lettuce - Pichnand favourite."},
+{id:10,name:"Beef Burger",cat:"burger",price:380,old:450,rating:"4.6",time:"12 min",tag:"Classic",veg:"spicy",img:"https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500",desc:"Juicy beef patty, cheese, ketchup, fresh bun."},
+{id:11,name:"Double Zinger Burger",cat:"burger",price:650,old:780,rating:"4.9",time:"14 min",tag:"Double",veg:"spicy",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500",desc:"Double zinger fillet, double cheese, extra mayo."},
+{id:12,name:"Chicken Shawarma",cat:"shawarma",price:350,old:420,rating:"4.7",time:"10 min",tag:"Fast",veg:"spicy",img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500",desc:"Juicy shawarma, garlic sauce, pickles, soft khubz."},
+{id:13,name:"Paratha Roll",cat:"shawarma",price:320,old:380,rating:"4.8",time:"10 min",tag:"Desi",veg:"spicy",img:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500",desc:"Crispy paratha, malai boti, chutney, onion."},
+{id:14,name:"Zinger Shawarma",cat:"shawarma",price:420,old:500,rating:"4.8",time:"12 min",tag:"Fusion",veg:"spicy",img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500",desc:"Zinger + Shawarma fusion, garlic mayo, crispy."},
+{id:15,name:"Loaded Fries",cat:"fries",price:480,old:580,rating:"4.9",time:"12 min",tag:"Loaded",veg:"veg",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500",desc:"Crispy fries, chicken, cheese sauce, mayo."},
+{id:16,name:"Plain Fries",cat:"fries",price:250,old:300,rating:"4.5",time:"8 min",tag:"Crispy",veg:"veg",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500",desc:"Golden crispy fries with ketchup."},
+{id:17,name:"Chicken Nuggets (6 Pc)",cat:"fries",price:420,old:500,rating:"4.7",time:"10 min",tag:"Kids",veg:"spicy",img:"https://images.unsplash.com/photo-1562967914-608f82629710?w=500",desc:"Crispy nuggets with garlic mayo."},
+{id:18,name:"Chicken Wings (6 Pc)",cat:"fries",price:550,old:650,rating:"4.8",time:"14 min",tag:"Spicy",veg:"spicy",img:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500",desc:"Spicy hot wings, BBQ sauce, dip."},
+{id:19,name:"Mango Shake",cat:"drinks",price:300,old:350,rating:"4.8",time:"5 min",tag:"Fresh",veg:"veg",img:"https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500",desc:"Fresh mango, milk, ice cream."},
+{id:20,name:"Oreo Shake",cat:"drinks",price:380,old:450,rating:"4.9",time:"5 min",tag:"Sweet",veg:"veg",img:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500",desc:"Oreo, milk, ice cream, chocolate."},
+{id:21,name:"Cold Drink (1.5L)",cat:"drinks",price:250,old:300,rating:"4.5",time:"2 min",tag:"Chilled",veg:"veg",img:"https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500",desc:"Chilled cold drink for family."},
+{id:22,name:"Mint Margarita",cat:"drinks",price:320,old:380,rating:"4.7",time:"5 min",tag:"Fresh",veg:"veg",img:"https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=500",desc:"Fresh mint, lemon, soda, chilled."},
+{id:23,name:"Family Deal - 2 Pizza + Drinks",cat:"family",price:1999,old:2999,rating:"5.0",time:"30 min",tag:"Family Deal",veg:"spicy",img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500",desc:"2 Medium Pizza + 4 Zinger + 1.5L Drink - Pichnand best deal."},
+{id:24,name:"Emaan Duo Deal",cat:"family",price:1499,old:1999,rating:"4.9",time:"25 min",tag:"Duo Deal",veg:"spicy",img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500",desc:"1 Medium Pizza + 2 Zinger + 2 Drinks."},
+{id:25,name:"Student Deal",cat:"family",price:899,old:1199,rating:"4.8",time:"20 min",tag:"Student",veg:"spicy",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500",desc:"1 Small Pizza + 1 Zinger + 1 Drink - For students Pichnand."},
+{id:26,name:"Chocolate Lava Cake",cat:"dessert",price:350,old:420,rating:"4.9",time:"8 min",tag:"Sweet",veg:"veg",img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500",desc:"Hot chocolate lava cake with ice cream."},
+{id:27,name:"Kheer - Special",cat:"dessert",price:280,old:320,rating:"4.7",time:"5 min",tag:"Desi Sweet",veg:"veg",img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500",desc:"Creamy traditional kheer with dry fruits."},
+{id:28,name:"Brownie with Ice Cream",cat:"dessert",price:420,old:500,rating:"4.8",time:"8 min",tag:"Sweet",veg:"veg",img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500",desc:"Hot brownie, vanilla ice cream, chocolate sauce."},
+{id:29,name:"Chicken Karahi Pizza",cat:"pizza",price:1249,old:1549,rating:"4.9",time:"27 min",tag:"Desi Fusion",veg:"spicy",img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500",desc:"Karahi chicken, green chilli, desi spices, mozzarella."},
+{id:30,name:"Malai Boti Pizza",cat:"pizza",price:1299,old:1599,rating:"4.9",time:"27 min",tag:"Creamy",veg:"spicy",img:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500",desc:"Creamy malai boti, cheese, capsicum, special sauce."}
+];
+let cart=[];
+let favourites=[];
+let orderHistory=[];
+let currentCat="all";
+let couponApplied=false;
+let couponRate=0;
+let tipAmount=0;
+let currentSize="Small 10 inch";
+let builderSizePrice=699;
+let builderCrust="Thin Crust";
+let builderSauce="Tomato Sauce";
+let isUrdu=false;
+let loyaltyPoints=120;
+let chatOpen=false;
+function renderMenu(list){let data=list||menu.filter(m=>currentCat==="all"||m.cat===currentCat);document.getElementById("menuGrid").innerHTML=data.map(m=>`<div class="food-card"><img src="${m.img}" alt="${m.name}"><div class="food-body"><div class="food-top"><h3>${m.name}</h3><div><span class="price">Rs ${m.price}</span><span class="old-price">Rs ${m.old}</span></div></div><p>${m.desc}</p><div class="food-meta"><span class="tag hot">${m.tag}</span><span class="tag">Rating ${m.rating} / 5</span><span class="tag">Time ${m.time}</span><span class="tag veg">Halal</span></div><div class="flex" style="justify-content:space-between;align-items:center"><button class="btn btn-primary" onclick="addToCart(${m.id})">Add to Cart</button><button class="btn btn-light" onclick="quickView(${m.id})">Quick View</button><button class="btn btn-light" onclick="addToFav(${m.id})">Save</button></div></div></div>`).join("");document.getElementById("menuCount").innerText=data.length;}
+function setSize(s,btn){currentSize=s;document.querySelectorAll(".size-btn").forEach(b=>b.classList.remove("active"));if(btn)btn.classList.add("active");document.getElementById("sizeInfo").innerText="Selected: "+s+" - Price as shown";toast("Size selected: "+s);}
+function filterCat(cat,btn){currentCat=cat;document.querySelectorAll(".cat-btn").forEach(b=>b.classList.remove("active"));if(btn)btn.classList.add("active");renderMenu();}
+function filterMenu(){let q=document.getElementById("menuSearch").value.toLowerCase();let veg=document.getElementById("vegFilter").value;let filtered=menu.filter(m=>(currentCat==="all"||m.cat===currentCat)&&(m.name.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q))&&(veg==="all"||m.veg===veg));renderMenu(filtered);}
+function sortMenu(){let v=document.getElementById("sortSelect").value;let list=[...menu];if(v==="low")list.sort((a,b)=>a.price-b.price);if(v==="high")list.sort((a,b)=>b.price-a.price);if(v==="rating")list.sort((a,b)=>parseFloat(b.rating)-parseFloat(a.rating));if(v==="name")list.sort((a,b)=>a.name.localeCompare(b.name));renderMenu(list);}
+function loadMore(){toast("All 30 items already loaded - Pichnand full menu shown");}
+function downloadMenu(){window.print();toast("Menu print ready - Emaan Pizza Pichnand");}
+function addToFav(id){let m=menu.find(x=>x.id===id);if(!favourites.includes(id))favourites.push(id);toast(m.name+" saved to favourites");}
+function showFavourites(){if(favourites.length===0) return toast("No favourites yet. Click Save on any item.");let list=menu.filter(m=>favourites.includes(m.id));renderMenu(list);toast("Showing your favourites - "+list.length+" items");}
+function showAllMenu(){currentCat="all";document.querySelectorAll(".cat-btn").forEach(b=>b.classList.remove("active"));document.querySelector(".cat-btn").classList.add("active");renderMenu();toast("Showing all menu - Pichnand");}
+function claimLoyalty(){if(loyaltyPoints>=100){loyaltyPoints-=100;document.getElementById("loyaltyPoints").innerText=loyaltyPoints+" Points";toast("Free Pizza claimed! 100 points used. Show this at counter.");}else{toast("Need 100 points. You have "+loyaltyPoints);}}
+function quickView(id){let m=menu.find(x=>x.id===id);document.getElementById("infoTitle").innerText=m.name+" - Rs "+m.price+" - Pichnand";document.getElementById("infoText").innerText=m.desc+" | Rating: "+m.rating+" | Time: "+m.time+" | Category: "+m.cat+" | Size: "+currentSize+" | Freshly made in Emaan Pizza Pichnand. Ingredients: Fresh dough, cheese, halal chicken, vegetables. Allergen: Contains gluten, dairy.";document.getElementById("infoModal").classList.add("open");}
+function addToCart(id){let m=menu.find(x=>x.id===id);let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({...m,qty:1,note:"Size: "+currentSize});updateCart();saveCartToStorage();toast(m.name+" added to cart - "+currentSize);openCart();}
+function addDeal(){cart.push({id:99,name:"Emaan Family Deal - Pichnand (Large Pizza + 4 Zinger + Drinks)",price:1999,old:2999,qty:1,img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200"});updateCart();toast("Family Deal added - Pichnand");openCart();}
+function addDeal2(){cart.push({id:98,name:"Emaan Duo Deal - Pichnand (Pizza + 2 Zinger + 2 Drinks)",price:1499,old:1999,qty:1,img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200"});updateCart();toast("Duo Deal added - Pichnand");openCart();}
+function selectBuilder(el,type,val){let parent=el.parentElement;parent.querySelectorAll(".topping").forEach(b=>b.classList.remove("selected"));el.classList.add("selected");if(type==="size"){builderSizePrice=val.includes("699")?699:val.includes("999")?999:1299;}if(type==="crust"){builderCrust=val;}if(type==="sauce"){builderSauce=val;}updateBuilder();}
+function updateBuilder(){let toppings=[];document.querySelectorAll("#builder .topping.selected").forEach(t=>{let txt=t.innerText;if(txt.includes("Extra")||txt.includes("Chicken")||txt.includes("Fajita")||txt.includes("Mushroom")||txt.includes("Onion")||txt.includes("Jalapeno")||txt.includes("Olives")||txt.includes("Sweet Corn")) toppings.push(txt);});let extra=toppings.length*100;if(builderCrust==="Cheese Burst") extra+=200;if(builderCrust==="Stuffed Crust") extra+=250;let total=builderSizePrice+extra;document.getElementById("builderSummary").innerHTML="Size Price: Rs "+builderSizePrice+"<br>Crust: "+builderCrust+"<br>Sauce: "+builderSauce+"<br>Toppings: "+(toppings.join(", ")||"None")+"<br>Extra: Rs "+extra;document.getElementById("builderPrice").innerText="Total: Rs "+total;return total;}
+function addCustomPizza(){let total=updateBuilder();cart.push({id:100+Math.floor(Math.random()*1000),name:"Custom Pizza - "+builderCrust+" - "+builderSauce,price:total,old:total+200,qty:1,img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200"});updateCart();toast("Custom Pizza added - Rs "+total);openCart();}
+function updateCart(){document.getElementById("cartCount").innerText=cart.reduce((a,b)=>a+b.qty,0);if(cart.length===0){document.getElementById("cartItems").innerHTML="<p style='text-align:center;color:#78716c;padding:30px 0'>Your cart is empty.<br>Add something delicious from Emaan Pizza Pichnand.</p>";}else{document.getElementById("cartItems").innerHTML=cart.map((item,i)=>`<div class="cart-item"><img src="${item.img}"><div class="cart-item-info"><b>${item.name}</b><br><span>Rs ${item.price} x ${item.qty}</span><br><small>${item.note||""}</small></div><div class="qty-row"><button class="qty-btn" onclick="changeQty(${i},-1)">-</button><b>${item.qty}</b><button class="qty-btn" onclick="changeQty(${i},1)">+</button></div><button onclick="removeItem(${i})" style="background:none;font-size:18px">X</button></div>`).join("");}let sub=cart.reduce((a,b)=>a+b.price*b.qty,0);let disc=couponApplied?Math.round(sub*couponRate):0;let del=sub===0?0:(sub>1200?0:100);let total=sub-disc+del+tipAmount;document.getElementById("subTotal").innerText="Rs "+sub;document.getElementById("discount").innerText="- Rs "+disc;document.getElementById("delCharge").innerText=sub>1200?"FREE":"Rs "+del;document.getElementById("tipDisplay").innerText="Rs "+tipAmount;document.getElementById("grandTotal").innerText="Rs "+total;}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCart();saveCartToStorage();}
+function removeItem(i){cart.splice(i,1);updateCart();saveCartToStorage();toast("Item removed");}
+function clearCart(){cart=[];couponApplied=false;tipAmount=0;updateCart();saveCartToStorage();toast("Cart cleared");}
+function saveCart(){saveCartToStorage();toast("Cart saved for later - Pichnand");}
+function saveCartToStorage(){try{localStorage.setItem("emaan_cart_pichnand",JSON.stringify(cart));}catch(e){}}
+function loadCartFromStorage(){try{let s=localStorage.getItem("emaan_cart_pichnand");if(s)cart=JSON.parse(s);}catch(e){}}
+function applyTip(){let v=parseInt(document.getElementById("tipInput").value)||0;tipAmount=v;updateCart();toast("Tip added: Rs "+v+" - Thank you");}
+function openCart(){document.getElementById("cartDrawer").classList.add("open");document.getElementById("overlay").classList.add("show");}
+function closeCart(){document.getElementById("cartDrawer").classList.remove("open");document.getElementById("overlay").classList.remove("show");}
+function applyCoupon(){let v=document.getElementById("couponInput").value.trim().toUpperCase();if(v==="EMAAN25"){couponApplied=true;couponRate=0.25;updateCart();toast("Coupon applied - 25% OFF - Pichnand");}else if(v==="PICHNAND10"){couponApplied=true;couponRate=0.10;updateCart();toast("Coupon applied - 10% OFF");}else if(v==="WELCOME10"){couponApplied=true;couponRate=0.10;updateCart();toast("Welcome coupon applied - 10% OFF");}else if(v==="FREEDEL"){couponApplied=false;updateCart();toast("Free delivery applied - Pichnand");}else toast("Invalid coupon. Try EMAAN25 or PICHNAND10");}
+function showCoupon(){toast("Your coupon: EMAAN25 - 25% OFF");document.getElementById("couponInput").value="EMAAN25";}
+function checkout(){if(cart.length===0)return toast("Cart is empty. Add food first.");closeCart();document.getElementById("checkoutModal").classList.add("open");}
+function closeCheckout(){document.getElementById("checkoutModal").classList.remove("open");}
+function placeOrder(){let name=document.getElementById("coName").value;let phone=document.getElementById("coPhone").value;let addr=document.getElementById("coAddress").value;if(!name||!phone||!addr)return toast("Please fill Name, Phone and Address - Pichnand");let orderNo="EM"+Math.floor(1000+Math.random()*9000);let area=document.getElementById("coArea").value;let pay=document.getElementById("coPay").value;let time=document.getElementById("coTime").value;document.getElementById("orderSuccess").innerText="Order Placed! Order No: "+orderNo+" - Area: "+area+" - Payment: "+pay+" - Time: "+time+" - Emaan Pizza Pichnand will call you in 5 minutes. Thank you!";let newRow=document.createElement("tr");newRow.innerHTML="<td>"+orderNo+"</td><td>"+name+" - "+area+"</td><td>"+cart.length+" items</td><td>"+document.getElementById("grandTotal").innerText+"</td><td>Preparing</td><td><button class='btn btn-light' onclick=\"toast('Order updated')\">Update</button></td>";document.getElementById("adminTable").prepend(newRow);document.getElementById("adminOrders").innerText=parseInt(document.getElementById("adminOrders").innerText)+1;document.getElementById("trackInput").value=orderNo;loyaltyPoints+=20;document.getElementById("loyaltyPoints").innerText=loyaltyPoints+" Points";orderHistory.push({no:orderNo,total:document.getElementById("grandTotal").innerText,area:area});cart=[];updateCart();saveCartToStorage();setTimeout(()=>{closeCheckout();document.getElementById("orderSuccess").innerText="";},5000);toast("Order placed: "+orderNo+" - Pichnand");}
+function quickOrder(){let name=document.getElementById("quickName").value;let phone=document.getElementById("quickPhone").value;if(!name||!phone)return toast("Please enter name and phone");let dish=document.getElementById("quickDish").value;let area=document.getElementById("quickArea").value;toast("Quick Order Placed: "+dish+" - Area: "+area+" - We will call you!");}
+function bookTable(){let name=document.getElementById("resName").value;let phone=document.getElementById("resPhone").value;let date=document.getElementById("resDate").value;if(!name||!phone||!date)return toast("Please fill Name, Phone and Date");let guests=document.getElementById("resGuests").value;let time=document.getElementById("resTime").value;document.getElementById("resResult").innerText="Table Booked! "+name+" - "+guests+" on "+date+" at "+time+" - Emaan Pizza Pichnand. Confirmation SMS sent.";toast("Table booked successfully - Pichnand!");}
+function addReview(){let n=document.getElementById("revName").value||"Guest - Pichnand";let t=document.getElementById("revText").value||"Great pizza!";let s=document.getElementById("revStars").value;document.getElementById("reviewList").innerHTML+="<div style='padding:10px;border:1px solid #e7e5e4;border-radius:10px;margin-top:8px'><b>"+n+" - "+s+"</b><p>"+t+"</p></div>";toast("Review submitted. Thank you - Pichnand!");}
+function subscribe(){let e=document.getElementById("newsEmail").value;if(!e.includes("@"))return toast("Enter valid email");toast("Subscribed! Emaan Pizza Pichnand offers will come on email. Your 10% code: WELCOME10");}
+function toggleDark(){document.body.classList.toggle("dark-mode");toast("Theme changed - Emaan Pizza Pichnand");}
+function toggleLanguage(){isUrdu=!isUrdu;if(isUrdu){document.getElementById("heroTitle").innerText="Pichnand Ka Best Pizza - Garam, Cheesy, Fresh";document.getElementById("heroText").innerText="Emaan Pizza - Pichnand ka apna pizza point. Fresh dough, imported cheese, halal chicken aur 25 minute fast delivery.";toast("Urdu mode ON");}else{document.getElementById("heroTitle").innerText="Best Pizza in Pichnand - Hot, Cheesy, Fresh";document.getElementById("heroText").innerText="Emaan Pizza - Pichnand's own pizza point. Fresh dough, imported cheese, halal chicken and 25 minutes fast delivery in Pichnand, Dhurnal, Talagang Road and nearby villages.";toast("English mode ON");}}
+function openModal(type){if(type==="about"){document.getElementById("infoTitle").innerText="Our Story - Emaan Pizza Pichnand";document.getElementById("infoText").innerText="Emaan Pizza started in Main Bazaar Pichnand to give Pichnand city-level pizza taste. Fresh dough, imported cheese, halal chicken, fair price. We serve 500+ customers daily in Pichnand.";document.getElementById("infoModal").classList.add("open");}if(type==="nutrition"){document.getElementById("infoTitle").innerText="Nutrition Info - Emaan Pizza Pichnand";document.getElementById("infoText").innerText="Medium Tikka Pizza: Approx 850 kcal per 2 slices. Protein 32g, Carbs 78g, Fat 28g. All ingredients fresh, halal. For diet options, choose Vegetable Pizza Thin Crust.";document.getElementById("infoModal").classList.add("open");}}
+function closeInfo(){document.getElementById("infoModal").classList.remove("open");}
+function toast(msg){let t=document.getElementById("toast");t.innerText=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2800);}
+function trackOrder(){let v=document.getElementById("trackInput").value;if(!v) return toast("Enter Order Number - e.g EM1234");document.getElementById("trackText").innerText="Order "+v+" found - Preparing in kitchen, Emaan Pizza Pichnand. Rider will reach in 20 min.";toast("Tracking: "+v);}
+function simulateTrack(){let steps=document.querySelectorAll(".track-step");let prog=document.getElementById("trackProgress");let width=35;let idx=1;let int=setInterval(()=>{width+=22;prog.style.width=width+"%";if(idx<steps.length){steps[idx].classList.add("done");steps[idx].classList.remove("active");if(idx+1<steps.length) steps[idx+1].classList.add("active");}idx++;document.getElementById("trackText").innerText=idx>=4?"Order Delivered - Enjoy Emaan Pizza Pichnand! Thank you.":"Order on the way - Rider in Pichnand, reaching soon.";if(idx>=4){clearInterval(int);toast("Order Delivered - Pichnand");}},1500);}
+function showOrderHistory(){if(orderHistory.length===0) return toast("No orders yet in this session. Place an order first.");document.getElementById("orderHistoryBox").innerHTML=orderHistory.map(o=>"<div style='padding:10px;border:1px solid #e7e5e4;border-radius:10px;margin-top:8px'><b>"+o.no+"</b> - "+o.total+" - "+o.area+"</div>").join("");toast("Order history shown");}
+function addAdminItem(){let n=document.getElementById("adminNewItem").value;let p=document.getElementById("adminNewPrice").value;let c=document.getElementById("adminNewCat").value;if(!n||!p) return toast("Enter item name and price");menu.push({id:menu.length+1,name:n,cat:c,price:parseInt(p),old:parseInt(p)+200,rating:"4.8",time:"20 min",tag:"New",veg:"veg",img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500",desc:"New item added by admin - Emaan Pizza Pichnand."});document.getElementById("adminMenuCount").innerText=menu.length;renderMenu();toast("Menu item added: "+n+" - Rs "+p);}
+function exportOrders(){let data={restaurant:"Emaan Pizza Pichnand",orders:document.getElementById("adminTable").innerText,exported:new Date().toISOString()};let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="emaan-pizza-pichnand-orders.json";a.click();toast("Orders exported - Pichnand");}
+function exportMenu(){let blob=new Blob([JSON.stringify(menu,null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="emaan-pizza-pichnand-menu.json";a.click();toast("Menu exported - Pichnand");}
+function printReport(){window.print();toast("Admin report print ready");}
+function toggleChat(){chatOpen=!chatOpen;document.getElementById("chatWidget").classList.toggle("open",chatOpen);}
+function sendChat(){let inp=document.getElementById("chatInput");let v=inp.value.trim();if(!v) return;document.getElementById("chatBody").innerHTML+="<div class='chat-msg me'>"+v+"</div>";inp.value="";setTimeout(()=>{let reply="Thank you! Emaan Pizza Pichnand will help you. For order, please tell us your item and area in Pichnand.";if(v.toLowerCase().includes("pizza")) reply="Great choice! Our best is Emaan Special Pizza Rs 1299 and Tikka Pizza Rs 999. Which size do you want? Small, Medium or Large?";if(v.toLowerCase().includes("price")) reply="Pizza starts from Rs 799. Family Deal Rs 1999. Use coupon EMAAN25 for 25% OFF.";if(v.toLowerCase().includes("delivery")) reply="Delivery in Pichnand takes 25 minutes. Delivery Rs 100, Free above Rs 1200.";document.getElementById("chatBody").innerHTML+="<div class='chat-msg bot'>"+reply+"</div>";},700);}
+let dealSec=4*3600+15*60+45;
+setInterval(()=>{dealSec--;let h=String(Math.floor(dealSec/3600)).padStart(2,"0");let m=String(Math.floor(dealSec/60)%60).padStart(2,"0");let s=String(dealSec%60).padStart(2,"0");document.getElementById("dealH").innerText=h;document.getElementById("dealM").innerText=m;document.getElementById("dealS").innerText=s;},1000);
+loadCartFromStorage();
+renderMenu();
+updateCart();
+updateBuilder();
+document.addEventListener("keydown",function(e){if(e.ctrlKey && e.key==="k"){e.preventDefault();document.getElementById("menuSearch").focus();}});
+setTimeout(()=>{toast("Welcome to Emaan Pizza Pichnand - Use EMAAN25 for 25% OFF");},1500);
 </script>
 </body>
 </html>
